@@ -31,6 +31,8 @@ export const colors = {
     main: palette.textColor,
     white: palette.white,
     black: palette.black,
+    error: palette.deepRed,
+    success: palette.lightGreen,
   },
   backGroundColor: {
     main: palette.backGroundColor,
