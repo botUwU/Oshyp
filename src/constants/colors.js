@@ -36,16 +36,19 @@ export const colors = {
     main: palette.backGroundColor,
     white: palette.white,
   },
-  buttonBackGroundColor: {
-    primary: palette.textColor,
-    secondary: palette.mainBlue,
-    sucess: palette.lightGreen,
-    danger: palette.deepRed,
+  button: {
+    buttonBackGroundColor: {
+      primary: palette.textColor,
+      secondary: palette.mainBlue,
+      sucess: palette.lightGreen,
+      danger: palette.deepRed,
+    },
+    buttonTextColor: {
+      primary: palette.white,
+      secondary: palette.white,
+      sucess: palette.white,
+      danger: palette.white,
+    },
   },
-  buttonTextColor: {
-    primary: palette.white,
-    secondary: palette.white,
-    sucess: palette.white,
-    danger: palette.white,
-  },
+  title: { primary: palette.mainBlue, secondary: palette.lightBlue },
 };
