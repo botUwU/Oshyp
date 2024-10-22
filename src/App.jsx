@@ -6,7 +6,19 @@ import Footer from "./components/Footer";
 import "./styles.css";
 // eslint-disable-next-line no-unused-vars
 import GlobalStyle from "./GlobalStyle";
-
+import { BiFontSize } from "react-icons/bi";
+import styled from "styled-components";
+import CTitle from "./customComponents/CTitle";
+const StyledImage = styled.img`
+  width: 50%;
+  height: 50%;
+`;
+const StyledDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 function App() {
   return (
     <div className="App">
@@ -15,7 +27,19 @@ function App() {
 
       {/* Sections */}
       <Section id="home" title="Accueil">
-        <p>Bienvenue sur le site d’Ostéothérapie et de Shiatsu.</p>
+        <StyledDescription>
+          <CTitle variation="h1" color="primary">
+            {" "}
+            Soulagez votre douleur et retrouvez votre mobilité avec
+            l’Ostéothérapie et le Shiatsu
+          </CTitle>
+          <CTitle variation="h2" color="secondary">
+            Découvrez des traitements naturels et efficaces pour les problèmes
+            musculo-squelettiques et améliorez votre bien-être global
+          </CTitle>
+        </StyledDescription>
+        {/* <p style={{ fontSize: "24px" }}>speed</p> */}
+        <img src="src\data\water.png" alt="" />
       </Section>
 
       <Section id="services" title="Nos Services">
