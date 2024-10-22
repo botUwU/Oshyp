@@ -64,6 +64,9 @@ h2 {
 /* ===== Footer ===== */
 footer {
   background-color: #87ceeb; /* Light Blue */
+  display: flex;
+  align-items: center;
+  justify-content: centerS;
   color: white;
   text-align: center;
   padding: 1rem;
