@@ -4,10 +4,13 @@ import Header from "./components/Header";
 import Section from "./components/Section";
 import Footer from "./components/Footer";
 import "./styles.css";
+// eslint-disable-next-line no-unused-vars
+import GlobalStyle from "./GlobalStyle";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <Header />
 
       {/* Sections */}
