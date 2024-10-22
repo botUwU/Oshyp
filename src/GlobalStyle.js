@@ -19,6 +19,12 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 @font-face {
+    font-family: 'PlaywriteGBS-Thin';
+    src: url(${Thin}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
     font-family: 'PlaywriteGBS-Italic';
     src: url(${Italic}) format('truetype');
     font-weight: normal;
