@@ -70,6 +70,7 @@ const Headercontainer = styled.header`
   box-shadow: 0px 8px 10.32px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
+  z-index: 10;
 `;
 const UL = styled.ul`
   display: flex;

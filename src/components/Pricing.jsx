@@ -13,25 +13,38 @@ export default function Pricing() {
   const { pricingRef } = useScroll();
   return (
     <Section ref={pricingRef}>
-      <CTitle
-        isCentred={true}
-        variation="h1"
-        color="primary"
-        tracking="0.1em"
-        mb="100px"
-      >
-        Tarifs
-      </CTitle>
-      <PricingSection>
-        <PriceContainer {...shiatsu}></PriceContainer>
-        <PriceContainer {...osteotherapie}></PriceContainer>
-      </PricingSection>
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <Cp color="main" weight="Bold" size="xxl_regular">
-          Chaque personne étant unique, la durée des séances peut varier en
-          fonction des besoins
-        </Cp>
-      </div>
+      <PricingContainer>
+        <CTitle
+          isCentred={true}
+          variation="h1"
+          color="primary"
+          tracking="0.1em"
+          mb="100px"
+        >
+          Tarifs
+        </CTitle>
+        <PricingSection>
+          <PriceContainer {...shiatsu}></PriceContainer>
+          <PriceContainer {...osteotherapie}></PriceContainer>
+        </PricingSection>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "100px",
+          }}
+        >
+          <Cp
+            tracking="0.1rem"
+            isCentred
+            color="main"
+            weight="Bold"
+            size="xxl_regular"
+          >
+            Chaque personne étant unique, la durée des séances peut varier en
+            fonction des besoins
+          </Cp>
+        </div>
+      </PricingContainer>
     </Section>
   );
 }
@@ -42,3 +55,5 @@ const PricingSection = styled.div`
   gap: 24px;
   padding: 0 60px;
 `;
+
+const PricingContainer = styled.div``;

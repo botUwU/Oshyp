@@ -14,7 +14,7 @@ export default function HeaderItem({ children, name, onScroll = () => {} }) {
       <li>
         <Linkdiv>
           {children}
-          <Cp color="white" weight="Bold" size="lg_regular">
+          <Cp color="main" weight="Bold" size="lg_regular">
             {name}
           </Cp>
         </Linkdiv>
