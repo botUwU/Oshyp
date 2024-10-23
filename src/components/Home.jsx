@@ -74,33 +74,36 @@ import Cp from "../customComponents/Cp";
 export default function Home() {
   const { homeRef, scrollToSection, servicesRef } = useScroll();
   return (
-    <Section ref={homeRef}>
-      <HomeContainer>
-        <Description>
-          <CTitle variation="h1" color="primary">
-            Rencontrez Miguel Duenas{" "}
-          </CTitle>
-          <CTitle variation="h2" color="secondary">
-            Découvrez des traitements naturels et efficaces pour les douleurs
-            musculo-squelettiques et améliorez votre bien-être général.{" "}
-          </CTitle>
-          <Cbutton
-            variation="secondary"
-            onClick={() => {
-              scrollToSection(servicesRef);
-            }}
-          >
-            <Cp color="white">En savoir plus sur nos services → </Cp>
-          </Cbutton>
-        </Description>
-        <CImage
-          src="src\data\image.png"
-          height={"50%"}
-          width={"20%"}
-          rounded={false}
-        />
-      </HomeContainer>
-    </Section>
+    <WrapperContainer>
+      <Section ref={homeRef}>
+        <HomeContainer>
+          <Description>
+            <CTitle variation="h1" color="primary">
+              Rencontrez Miguel Duenas{" "}
+            </CTitle>
+            <CTitle variation="h2" color="secondary">
+              Découvrez des traitements naturels et efficaces pour les douleurs
+              musculo-squelettiques et améliorez votre bien-être général.{" "}
+            </CTitle>
+            <Cbutton
+              variation="secondary"
+              onClick={() => {
+                scrollToSection(servicesRef);
+              }}
+            >
+              <Cp color="white">En savoir plus sur nos services → </Cp>
+            </Cbutton>
+          </Description>
+          <CImage
+            src="src\data\image.png"
+            height={"50%"}
+            width={"20%"}
+            rounded={false}
+            shadow={"medium"}
+          />
+        </HomeContainer>
+      </Section>
+    </WrapperContainer>
   );
 }
 
@@ -123,4 +126,8 @@ const Description = styled.div`
   align-items: start;
   justify-content: center;
   gap: 30px;
+`;
+const WrapperContainer = styled.div`
+  background-color: ${colors.backGroundColor.mainWhite};
+  display: flex;
 `;

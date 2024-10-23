@@ -20,40 +20,53 @@ const Header = () => {
     scrollToSection,
   } = useScroll();
   return (
-    <Headercontainer>
-      <nav>
-        <UL>
-          <HeaderItem name="Accueil" onScroll={() => scrollToSection(homeRef)}>
-            <IoHomeOutline size={"30px"} />
-          </HeaderItem>
+    <div
+      style={{
+        backgroundColor: colors.backGroundColor.mainWhite,
+        zIndex: 10,
+      }}
+    >
+      <Headercontainer>
+        <nav>
+          <UL>
+            <HeaderItem
+              name="Accueil"
+              onScroll={() => scrollToSection(homeRef)}
+            >
+              <IoHomeOutline size={"30px"} />
+            </HeaderItem>
 
-          <HeaderItem
-            name="Services"
-            onScroll={() => scrollToSection(servicesRef)}
-          >
-            <MdOutlineMedicalServices size={"30px"} />
-          </HeaderItem>
+            <HeaderItem
+              name="Services"
+              onScroll={() => scrollToSection(servicesRef)}
+            >
+              <MdOutlineMedicalServices size={"30px"} />
+            </HeaderItem>
 
-          <HeaderItem
-            name="Testimonials"
-            onScroll={() => scrollToSection(testimonialsRef)}
-          >
-            <FaRegSmile size={"30px"} />
-          </HeaderItem>
+            <HeaderItem
+              name="Testimonials"
+              onScroll={() => scrollToSection(testimonialsRef)}
+            >
+              <FaRegSmile size={"30px"} />
+            </HeaderItem>
 
-          <HeaderItem name="Prix" onScroll={() => scrollToSection(pricingRef)}>
-            <MdAttachMoney size={"30px"} />
-          </HeaderItem>
+            <HeaderItem
+              name="Prix"
+              onScroll={() => scrollToSection(pricingRef)}
+            >
+              <MdAttachMoney size={"30px"} />
+            </HeaderItem>
 
-          <HeaderItem
-            name="Contact"
-            onScroll={() => scrollToSection(contactRef)}
-          >
-            <IoIosContact size={"30px"} />
-          </HeaderItem>
-        </UL>
-      </nav>
-    </Headercontainer>
+            <HeaderItem
+              name="Contact"
+              onScroll={() => scrollToSection(contactRef)}
+            >
+              <IoIosContact size={"30px"} />
+            </HeaderItem>
+          </UL>
+        </nav>
+      </Headercontainer>
+    </div>
   );
 };
 
