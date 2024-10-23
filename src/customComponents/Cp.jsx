@@ -4,13 +4,17 @@ import { colors } from "../constants/colors";
 
 export default function Cp({
   children,
+  isCentred = false,
   size = "md_regular",
   weight = "medium",
   color = "main",
+  tracking,
 }) {
   const [fontSize, fontWeight] = size.split("_");
   return (
     <P
+      tracking={tracking}
+      isCentred={isCentred}
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}
@@ -82,4 +86,6 @@ const P = styled.p`
       return colors.textColor.main;
     }
   }};
+  text-align: ${(props) => (props.isCentred ? "center" : "left")};
+  letter-spacing: ${(props) => props.tracking || undefined};
 `;

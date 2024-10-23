@@ -52,7 +52,11 @@ export const colors = {
       danger: palette.white,
     },
   },
-  title: { primary: palette.mainBlue, secondary: palette.lightBlue },
+  title: {
+    primary: palette.textColor,
+    secondary: palette.mainBlue,
+    white: palette.mainWhite,
+  },
   shadows: {
     black: palette.black,
     gray: palette.gray,
