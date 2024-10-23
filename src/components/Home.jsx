@@ -71,6 +71,40 @@ import { colors } from "../constants/colors";
 import CImage from "../customComponents/CImage";
 import Cbutton from "../customComponents/Cbutton";
 import Cp from "../customComponents/Cp";
+export default function Home() {
+  const { homeRef, scrollToSection, servicesRef } = useScroll();
+  return (
+    <Section ref={homeRef}>
+      <HomeContainer>
+        <Description>
+          <CTitle variation="h1" color="primary">
+            Rencontrez Miguel Duenas{" "}
+          </CTitle>
+          <CTitle variation="h2" color="secondary">
+            Découvrez des traitements naturels et efficaces pour les douleurs
+            musculo-squelettiques et améliorez votre bien-être général.{" "}
+          </CTitle>
+          <Cbutton
+            variation="secondary"
+            onClick={() => {
+              scrollToSection(servicesRef);
+            }}
+          >
+            <Cp color="white">En savoir plus sur nos services → </Cp>
+          </Cbutton>
+        </Description>
+        <CImage
+          src="src\data\image.png"
+          height={"50%"}
+          width={"20%"}
+          rounded={false}
+        />
+      </HomeContainer>
+    </Section>
+  );
+}
+
+const HomeContainer = styled.div``;
 const Description = styled.div`
   height: 100%;
   width: 50%;
@@ -82,33 +116,3 @@ const Description = styled.div`
   justify-content: center;
   gap: 30px;
 `;
-export default function Home() {
-  const { homeRef, scrollToSection, servicesRef } = useScroll();
-  return (
-    <Section ref={homeRef}>
-      <Description>
-        <CTitle variation="h1" color="primary">
-          Rencontrez Miguel Duenas{" "}
-        </CTitle>
-        <CTitle variation="h2" color="secondary">
-          Découvrez des traitements naturels et efficaces pour les douleurs
-          musculo-squelettiques et améliorez votre bien-être général.{" "}
-        </CTitle>
-        <Cbutton
-          variation="secondary"
-          onClick={() => {
-            scrollToSection(servicesRef);
-          }}
-        >
-          <Cp color="white">En savoir plus sur nos services → </Cp>
-        </Cbutton>
-      </Description>
-      <CImage
-        src="src\data\image.png"
-        height={"50%"}
-        width={"20%"}
-        rounded={false}
-      />
-    </Section>
-  );
-}
