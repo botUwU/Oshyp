@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { useScroll } from "../helper/useScroll";
 import { Section } from "../GlobalStyle";

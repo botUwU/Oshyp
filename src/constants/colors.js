@@ -37,6 +37,8 @@ export const colors = {
   backGroundColor: {
     main: palette.backGroundColor,
     white: palette.white,
+    mainWhite: palette.mainWhite,
+    cyan: palette.cyan,
   },
   button: {
     buttonBackGroundColor: {

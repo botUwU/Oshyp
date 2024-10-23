@@ -10,7 +10,6 @@ import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
 
-
 const Header = () => {
   const {
     homeRef,
@@ -53,7 +52,6 @@ const Header = () => {
             <IoIosContact size={"30px"} />
           </HeaderItem>
         </UL>
-
       </nav>
     </Headercontainer>
   );
@@ -62,7 +60,7 @@ const Header = () => {
 export default Header;
 
 const Headercontainer = styled.header`
-  background-color: ${colors.backGroundColor.main};
+  background-color: ${colors.backGroundColor.cyan};
   display: flex;
   justify-content: center;
   align-items: center;

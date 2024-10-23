@@ -13,7 +13,7 @@ export default function CImage({
 }) {
   return (
     <div style={{ height: height, width: width }}>
-      <Image src={src} shadow={shadow} fit={fit} rounded={rounded} />;
+      <Image src={src} shadow={shadow} fit={fit} rounded={rounded} />
     </div>
   );
 }
