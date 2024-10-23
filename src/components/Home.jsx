@@ -78,10 +78,10 @@ export default function Home() {
       <Section ref={homeRef}>
         <HomeContainer>
           <Description>
-            <CTitle variation="h1" color="primary">
+            <CTitle variation="h1" tracking="0.2em" color="primary">
               Rencontrez Miguel Duenas{" "}
             </CTitle>
-            <CTitle variation="h2" color="secondary">
+            <CTitle variation="h2" tracking="0.2em" color="secondary">
               Découvrez des traitements naturels et efficaces pour les douleurs
               musculo-squelettiques et améliorez votre bien-être général.{" "}
             </CTitle>
@@ -130,4 +130,5 @@ const Description = styled.div`
 const WrapperContainer = styled.div`
   background-color: ${colors.backGroundColor.mainWhite};
   display: flex;
+  line-height: 1.9;
 `;
