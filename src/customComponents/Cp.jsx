@@ -78,6 +78,8 @@ const P = styled.p`
       return colors.textColor.success;
     } else if (props.color === "error") {
       return colors.textColor.error;
+    } else if (props.color === "secondary") {
+      return colors.textColor.secondary;
     } else {
       return colors.textColor.main;
     }

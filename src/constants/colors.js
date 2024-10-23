@@ -37,6 +37,8 @@ export const colors = {
   backGroundColor: {
     main: palette.backGroundColor,
     white: palette.white,
+    mainWhite: palette.mainWhite,
+    cyan: palette.cyan,
   },
   button: {
     buttonBackGroundColor: {
@@ -52,7 +54,10 @@ export const colors = {
       danger: palette.white,
     },
   },
-  title: { primary: palette.mainBlue, secondary: palette.lightBlue },
+  title: {
+    primary: palette.textColor,
+    secondary: palette.mainBlue,
+  },
   shadows: {
     black: palette.black,
     gray: palette.gray,

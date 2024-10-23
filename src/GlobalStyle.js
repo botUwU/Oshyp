@@ -50,9 +50,14 @@ export default GlobalStyle;
 
 export const Section = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.type === "vertical" ? "column" : "row")};
   align-items: center;
   justify-content: center;
   height: 100dvh;
   background-color: ${(props) => props.color};
+  /* background-image: url(${(props) => props.background}); */
+  background-repeat: no-repeat;
 `;
+Section.defaultProps = {
+  type: "row", // Default value is 'row' (horizontal layout)
+};

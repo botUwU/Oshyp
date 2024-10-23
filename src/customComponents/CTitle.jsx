@@ -25,5 +25,6 @@ const Title2 = styled.h2`
   color: ${(props) =>
     props.color === "primary" ? colors.title.primary : colors.title.secondary};
   font-weight: 700;
-  font-family: "PlaywriteGBS-Regular";
+  font-size: large;
+  font-family: "PlaywriteGBS-ExtraLight";
 `;
