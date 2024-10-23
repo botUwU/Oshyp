@@ -7,6 +7,56 @@ import styled from "styled-components";
 import { colors } from "../constants/colors";
 import Cp from "../customComponents/Cp";
 
+export default function Testimonials() {
+  const { testimonialsRef } = useScroll();
+
+  return (
+    <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
+      <Section ref={testimonialsRef} type="vertical">
+        <Container>
+          <CTitle isCentred variation="h1" color="primary">
+            Témoignages
+          </CTitle>
+
+          <CTitle isCentred variation="h2" color="secondary">
+            Voici ce que nos clients disent de nos services.
+          </CTitle>
+
+          <TestimonialWrapper>
+            {/* Testimonial 1 */}
+            <TestimonialCard>
+              <Cp color="dark">
+                "L'Ostéothérapie m'a permis de retrouver ma mobilité en quelques
+                séances seulement. Miguel est très professionnel et
+                attentionné."
+              </Cp>
+              <Author>– Jean Dupont</Author>
+            </TestimonialCard>
+
+            {/* Testimonial 2 */}
+            <TestimonialCard>
+              <Cp color="dark">
+                "Le Shiatsu m'a vraiment aidé à réduire mon stress et à mieux
+                gérer mon quotidien. Je recommande vivement !"
+              </Cp>
+              <Author>– Marie Leclerc</Author>
+            </TestimonialCard>
+
+            {/* Testimonial 3 */}
+            <TestimonialCard>
+              <Cp color="dark">
+                "Un service exceptionnel ! Mes douleurs de dos ont quasiment
+                disparu après quelques séances d'Ostéothérapie."
+              </Cp>
+              <Author>– Luc Martin</Author>
+            </TestimonialCard>
+          </TestimonialWrapper>
+        </Container>
+      </Section>
+    </div>
+  );
+}
+
 // Styled component for the testimonial container
 const TestimonialWrapper = styled.div`
   display: flex;
@@ -22,7 +72,7 @@ const TestimonialCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.backGroundColor.white};
+  background-color: ${colors.backGroundColor.main};
   padding: 20px;
   width: 60%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -41,51 +91,10 @@ const Author = styled.p`
   margin-top: 10px;
 `;
 
-export default function Testimonials() {
-  const { testimonialsRef } = useScroll();
-
-  return (
-    <Section
-      ref={testimonialsRef}
-      color={colors.backGroundColor.mainWhite}
-      type="vertical"
-    >
-      <CTitle variation="h1" color="primary">
-        Témoignages
-      </CTitle>
-
-      <CTitle variation="h2" color="secondary">
-        Voici ce que nos clients disent de nos services.
-      </CTitle>
-
-      <TestimonialWrapper>
-        {/* Testimonial 1 */}
-        <TestimonialCard>
-          <Cp color="dark">
-            "L'Ostéothérapie m'a permis de retrouver ma mobilité en quelques
-            séances seulement. Miguel est très professionnel et attentionné."
-          </Cp>
-          <Author>– Jean Dupont</Author>
-        </TestimonialCard>
-
-        {/* Testimonial 2 */}
-        <TestimonialCard>
-          <Cp color="dark">
-            "Le Shiatsu m'a vraiment aidé à réduire mon stress et à mieux gérer
-            mon quotidien. Je recommande vivement !"
-          </Cp>
-          <Author>– Marie Leclerc</Author>
-        </TestimonialCard>
-
-        {/* Testimonial 3 */}
-        <TestimonialCard>
-          <Cp color="dark">
-            "Un service exceptionnel ! Mes douleurs de dos ont quasiment disparu
-            après quelques séances d'Ostéothérapie."
-          </Cp>
-          <Author>– Luc Martin</Author>
-        </TestimonialCard>
-      </TestimonialWrapper>
-    </Section>
-  );
-}
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+`;

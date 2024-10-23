@@ -49,15 +49,14 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 export const Section = styled.div`
-  display: flex;
-  flex-direction: ${(props) => (props.type === "vertical" ? "column" : "row")};
   align-items: center;
   justify-content: center;
   height: 100dvh;
+  flex-grow: 1;
+  padding: 30px 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-color: ${(props) => props.color};
-  /* background-image: url(${(props) => props.background}); */
-  background-repeat: no-repeat;
 `;
-Section.defaultProps = {
-  type: "row", // Default value is 'row' (horizontal layout)
-};
+//hadhi matmeshach khalaha heka
+//do not fking touch this

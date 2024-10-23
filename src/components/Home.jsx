@@ -83,20 +83,9 @@ const Description = styled.div`
   gap: 30px;
 `;
 export default function Home() {
-  const {
-    homeRef,
-    scrollToSection,
-    servicesRef,
-    contactRef,
-    testimonialsRef,
-    pricingRef,
-  } = useScroll();
+  const { homeRef, scrollToSection, servicesRef } = useScroll();
   return (
-    <Section
-      ref={homeRef}
-      style={{ height: "100dvh" }}
-      color={colors.backGroundColor.mainWhite}
-    >
+    <Section ref={homeRef}>
       <Description>
         <CTitle variation="h1" color="primary">
           Rencontrez Miguel Duenas{" "}
