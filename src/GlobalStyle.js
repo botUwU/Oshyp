@@ -51,7 +51,7 @@ export default GlobalStyle;
 export const Section = styled.div`
   align-items: center;
   justify-content: center;
-  height: 100dvh;
+  min-height: 100dvh;
   flex-grow: 1;
   padding: 30px 60px;
   margin-top: 30px;
