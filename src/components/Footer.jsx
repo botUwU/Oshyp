@@ -1,12 +1,10 @@
 // src/components/Footer.js
 // import React from "react";
 
+import { Section } from "../GlobalStyle";
+
 const Footer = () => {
-  return (
-    <footer>
-      <p>&copy; 2024 Ostéothérapie et Shiatsu | Contact: +216 646870652</p>
-    </footer>
-  );
+  return <Section>test</Section>;
 };
 
 export default Footer;
