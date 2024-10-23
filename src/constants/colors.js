@@ -53,4 +53,8 @@ export const colors = {
     },
   },
   title: { primary: palette.mainBlue, secondary: palette.lightBlue },
+  shadows: {
+    black: palette.black,
+    gray: palette.gray,
+  },
 };

@@ -10,35 +10,10 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header ===== */
-header {
-  background-color: #87ceeb; /* Light Blue */
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
 header nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-}
-
-header nav ul li {
-  margin: 0 1rem;
-}
-
-header nav ul li a {
-  color: white; /* White Text */
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-header nav ul li a:hover {
-  text-decoration: underline;
 }
 
 /* ===== Section Styling ===== */
@@ -47,21 +22,8 @@ section {
   min-height: 100vh;
 }
 
-section:nth-child(even) {
-  background-color: #f0f8ff; /* Alice Blue for alternating sections */
-}
-
-section:nth-child(odd) {
-  background-color: white; /* White for alternating sections */
-}
-
-h2 {
-  color: #15423d; /* Dark green text to maintain contrast */
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 /* ===== Footer ===== */
+
 footer {
   background-color: #87ceeb; /* Light Blue */
   display: flex;
@@ -78,21 +40,4 @@ footer {
 /* ===== Global Styles ===== */
 html {
   scroll-behavior: smooth; /* Enables smooth scrolling */
-}
-
-p {
-  color: #15423d; /* Dark green for text readability */
-}
-
-button {
-  background-color: #87ceeb; /* Light Blue for buttons */
-  color: white; /* White text */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #5dade2; /* Darker blue for hover effect */
 }

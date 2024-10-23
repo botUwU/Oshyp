@@ -6,63 +6,73 @@ import { FaRegSmile } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 import styled from "styled-components";
-import Cp from "../customComponents/Cp";
-import NavButton from "../customComponents/CNavButtons";
-const Linkdiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+import { useScroll } from "../helper/useScroll";
+import HeaderItem from "./HeaderItem";
+import { colors } from "../constants/colors";
+
+
 const Header = () => {
+  const {
+    homeRef,
+    pricingRef,
+    servicesRef,
+    testimonialsRef,
+    contactRef,
+    scrollToSection,
+  } = useScroll();
   return (
-    <header>
+    <Headercontainer>
       <nav>
-        <ul>
-          <li>
-            <a href="#home">
-              <NavButton>
-                <IoHomeOutline size={"30px"} />
-                <Cp>Acceuil</Cp>
-              </NavButton>
-            </a>
-          </li>
-          <li>
-            <a href="#services">
-              <NavButton>
-                <MdOutlineMedicalServices size={"30px"} />
-                <Cp>Services</Cp>
-              </NavButton>
-            </a>
-          </li>
-          <li>
-            <a href="#testimonials">
-              <NavButton>
-                <FaRegSmile size={"30px"} />
-                <Cp>Témoignages</Cp>
-              </NavButton>
-            </a>
-          </li>
-          <li>
-            <a href="#pricing">
-              <NavButton>
-                <MdAttachMoney size={"30px"} />
-                <Cp>Tarifs</Cp>
-              </NavButton>
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <NavButton>
-                <IoIosContact size={"30px"} />
-                <Cp>Contact</Cp>
-              </NavButton>
-            </a>
-          </li>
-        </ul>
+        <UL>
+          <HeaderItem name="Accueil" onScroll={() => scrollToSection(homeRef)}>
+            <IoHomeOutline color={colors.textColor} size={"30px"} />
+          </HeaderItem>
+
+          <HeaderItem
+            name="Services"
+            onScroll={() => scrollToSection(servicesRef)}
+          >
+            <MdOutlineMedicalServices color={colors.textColor} size={"30px"} />
+          </HeaderItem>
+
+          <HeaderItem
+            name="Testimonials"
+            onScroll={() => scrollToSection(testimonialsRef)}
+          >
+            <FaRegSmile color={colors.textColor} size={"30px"} />
+          </HeaderItem>
+
+          <HeaderItem name="Prix" onScroll={() => scrollToSection(pricingRef)}>
+            <MdAttachMoney color={colors.textColor} size={"30px"} />
+          </HeaderItem>
+
+          <HeaderItem
+            name="Contact"
+            onScroll={() => scrollToSection(contactRef)}
+          >
+            <IoIosContact color={colors.textColor} size={"30px"} />
+          </HeaderItem>
+        </UL>
+
       </nav>
-    </header>
+    </Headercontainer>
   );
 };
 
 export default Header;
+
+const Headercontainer = styled.header`
+  background-color: ${colors.backGroundColor.main};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${colors.textColor};
+  width: 100%;
+  padding: 12px 18px;
+`;
+const UL = styled.ul`
+  display: flex;
+  list-style: none;
+  width: 100%;
+  gap: 60px;
+`;
