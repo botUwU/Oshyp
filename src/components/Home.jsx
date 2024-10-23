@@ -104,7 +104,15 @@ export default function Home() {
   );
 }
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 48px;
+`;
 const Description = styled.div`
   height: 100%;
   width: 50%;
