@@ -10,6 +10,7 @@ import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
 
+
 const Header = () => {
   const {
     homeRef,
@@ -52,6 +53,7 @@ const Header = () => {
             <IoIosContact color={colors.textColor} size={"30px"} />
           </HeaderItem>
         </UL>
+
       </nav>
     </Headercontainer>
   );
