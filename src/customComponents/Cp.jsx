@@ -33,6 +33,8 @@ const P = styled.p`
       return "18px";
     } else if (props.fontSize === "xxl") {
       return "22px";
+    } else if (props.fontSize === "xxxl") {
+      return "26px";
     } else {
       return "14px";
     }
@@ -47,7 +49,7 @@ const P = styled.p`
     } else return "PlaywriteGBS-Regular";
   }};
   font-weight: ${(props) => {
-    if (props.weight === "thin") {
+    if (props.weight === "Thin") {
       return "100";
     } else if (props.weight === "ExtraLight") {
       return "200";

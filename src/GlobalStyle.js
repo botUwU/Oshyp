@@ -1,5 +1,5 @@
 // src/GlobalStyle.js
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import ExtraLight from "./assets/fonts/PlaywriteGBS-ExtraLight.ttf";
 import ExtraLightItalic from "./assets/fonts/PlaywriteGBS-ExtraLightItalic.ttf";
 import Italic from "./assets/fonts/PlaywriteGBS-Italic.ttf";
@@ -39,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+  font-family: 'PlaywriteGBS-Regular',sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -46,3 +47,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default GlobalStyle;
+
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background-color: ${(props) => props.color};
+`;
