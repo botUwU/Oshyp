@@ -6,6 +6,8 @@ import { FaRegSmile } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 import styled from "styled-components";
+import Cp from "../customComponents/Cp";
+import NavButton from "../customComponents/CNavButtons";
 const Linkdiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,42 +21,42 @@ const Header = () => {
         <ul>
           <li>
             <a href="#home">
-              <Linkdiv>
+              <NavButton>
                 <IoHomeOutline size={"30px"} />
-                <p>Acceuil</p>
-              </Linkdiv>
+                <Cp>Acceuil</Cp>
+              </NavButton>
             </a>
           </li>
           <li>
             <a href="#services">
-              <Linkdiv>
+              <NavButton>
                 <MdOutlineMedicalServices size={"30px"} />
-                <p>Services</p>
-              </Linkdiv>
+                <Cp>Services</Cp>
+              </NavButton>
             </a>
           </li>
           <li>
             <a href="#testimonials">
-              <Linkdiv>
+              <NavButton>
                 <FaRegSmile size={"30px"} />
-                <p>Témoignages</p>
-              </Linkdiv>
+                <Cp>Témoignages</Cp>
+              </NavButton>
             </a>
           </li>
           <li>
             <a href="#pricing">
-              <Linkdiv>
+              <NavButton>
                 <MdAttachMoney size={"30px"} />
-                <p>Tarifs</p>
-              </Linkdiv>
+                <Cp>Tarifs</Cp>
+              </NavButton>
             </a>
           </li>
           <li>
             <a href="#contact">
-              <Linkdiv>
+              <NavButton>
                 <IoIosContact size={"30px"} />
-                <p>Contact</p>
-              </Linkdiv>
+                <Cp>Contact</Cp>
+              </NavButton>
             </a>
           </li>
         </ul>

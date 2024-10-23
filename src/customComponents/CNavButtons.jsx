@@ -3,7 +3,10 @@ import styled from "styled-components";
 
 const NavButton = styled.a`
   position: relative;
-  display: inline-block;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
   padding: 8px 18px;
   color: #15423d; /* Text color */
   font-size: 1.2rem;

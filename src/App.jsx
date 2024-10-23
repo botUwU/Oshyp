@@ -9,6 +9,7 @@ import GlobalStyle from "./GlobalStyle";
 import { BiFontSize } from "react-icons/bi";
 import styled from "styled-components";
 import CTitle from "./customComponents/CTitle";
+import Cp from "./customComponents/Cp";
 const StyledImage = styled.img`
   width: 50%;
   height: 50%;
@@ -37,6 +38,9 @@ function App() {
             Découvrez des traitements naturels et efficaces pour les problèmes
             musculo-squelettiques et améliorez votre bien-être global
           </CTitle>
+          <Cp size="xxl_Italic" weight="bold" color="main">
+            i hate nigger s
+          </Cp>
         </StyledDescription>
         {/* <p style={{ fontSize: "24px" }}>speed</p> */}
         <img src="src\data\water.png" alt="" />
