@@ -51,7 +51,7 @@ const Header = () => {
             </HeaderItem>
 
             <HeaderItem
-              name="Prix"
+              name="Tarifs"
               onScroll={() => scrollToSection(pricingRef)}
             >
               <MdAttachMoney size={"30px"} />

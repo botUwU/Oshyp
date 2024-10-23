@@ -7,6 +7,7 @@ import { colors } from "../constants/colors";
 import styled from "styled-components";
 import Cp from "../customComponents/Cp";
 import CImage from "../customComponents/CImage";
+import Separator from "../customComponents/Separator";
 
 export default function Service() {
   const {
@@ -18,17 +19,120 @@ export default function Service() {
     homeRef,
   } = useScroll();
   return (
-    <Section ref={servicesRef}>
-      <Title>
-        <CTitle isCentred variation="h1" color="primary">
-          Nos Services
-        </CTitle>
-        <CTitle isCentred variation="h2" color="secondary">
-          Nous offrons une gamme de traitements efficaces pour soulager la
-          douleur et améliorer la santé générale.
-        </CTitle>
-      </Title>
-    </Section>
+    <div>
+      <Section ref={servicesRef}>
+        <div
+          style={{
+            padding: "60px 60px",
+            gap: "300px",
+            display: "flex",
+          }}
+        >
+          <Title>
+            <CTitle isCentred tracking="0.15em" variation="h1" color="primary">
+              Nos Services
+            </CTitle>
+            <CTitle isCentred tracking="0.2em" variation="h2" color="secondary">
+              Nous offrons une gamme de traitements efficaces pour soulager la
+              douleur et améliorer la santé générale.
+            </CTitle>
+            <Separator></Separator>
+            <InfoContainer>
+              <CTitle
+                mb={"100px"}
+                tracking="0.1em"
+                isCentred
+                variation="h2"
+                color="primary"
+              >
+                Ostéothérapie
+              </CTitle>
+              <GridContainer>
+                <Cp
+                  color="main"
+                  size="xl_regular"
+                  weight="Bold"
+                  tracking="0.2em"
+                  isCentred
+                >
+                  L'ostéothérapie est une méthode douce et non invasive qui aide
+                  à soulager la douleur et à restaurer la mobilité.
+                </Cp>
+                <CImage
+                  src={"src/data/image2.png"}
+                  height={"250px"}
+                  fit="cover"
+                  shadow={"small"}
+                />
+                <CImage
+                  src={"src/data/image3.png"}
+                  height={"250px"}
+                  fit="cover"
+                  shadow={"small"}
+                />
+                <Cp
+                  color="main"
+                  size="xl_regular"
+                  weight="Bold"
+                  tracking="0.2em"
+                  isCentred
+                >
+                  Elle traite des problèmes tels que les cervicalgies, les
+                  migraines, les sciatiques, et plus encore.
+                </Cp>
+              </GridContainer>
+            </InfoContainer>
+            <Separator></Separator>
+            <InfoContainer>
+              <CTitle
+                tracking="0.1em"
+                mb={"100px"}
+                isCentred
+                variation="h2"
+                color="primary"
+              >
+                Shiatsu
+              </CTitle>
+              <GridContainer>
+                <Cp
+                  color="main"
+                  size="xl_regular"
+                  weight="Bold"
+                  tracking="0.2em"
+                  isCentred
+                >
+                  Le Shiatsu est une thérapie manuelle d'origine japonaise, qui
+                  aide à rétablir l'équilibre énergétique du corps.
+                </Cp>
+                <CImage
+                  src={"src/data/image0.png"}
+                  height={"250px"}
+                  fit="cover"
+                  shadow={"small"}
+                />
+                <CImage
+                  src={"src/data/image1.png"}
+                  height={"250px"}
+                  fit="cover"
+                  shadow={"small"}
+                />
+                <Cp
+                  color="main"
+                  size="xl_regular"
+                  weight="Bold"
+                  tracking="0.2em"
+                  isCentred
+                >
+                  Il est particulièrement efficace pour réduire le stress,
+                  améliorer la circulation, et renforcer les défenses naturelles
+                  du corps.
+                </Cp>
+              </GridContainer>
+            </InfoContainer>
+          </Title>
+        </div>
+      </Section>
+    </div>
   );
 }
 const Title = styled.div`
@@ -38,7 +142,17 @@ const Title = styled.div`
   justify-content: center;
   gap: 30px;
 `;
-
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 30px;
+  row-gap: 100px;
+  line-height: 2.5;
+`;
+const InfoContainer = styled.div``;
 // <ServicesSection
 //   color={colors.backGroundColor.white}
 //   ref={servicesRef}

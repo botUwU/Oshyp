@@ -15,8 +15,8 @@ export default function Main() {
       <Service />
       <Testimonial />
       <Pricing />
-      <Footer />
       <Contact />
+      <Footer />
     </>
   );
 }
