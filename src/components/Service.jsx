@@ -8,16 +8,23 @@ import styled from "styled-components";
 import Cp from "../customComponents/Cp";
 import CImage from "../customComponents/CImage";
 import Separator from "../customComponents/Separator";
+import { useInView } from "react-intersection-observer";
 
 export default function Service() {
-  const {
-    servicesRef,
-    contactRef,
-    scrollToSection,
-    testimonialsRef,
-    pricingRef,
-    homeRef,
-  } = useScroll();
+  const { servicesRef } = useScroll();
+
+  const { ref: titleRef, inView: TitleInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+  const { ref: shiatuRef, inView: ShiatuInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+  const { ref: osteoRef, inView: osteoInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   return (
     <div>
       <Section ref={servicesRef}>
@@ -28,17 +35,30 @@ export default function Service() {
             display: "flex",
           }}
         >
-          <Title>
-            <CTitle isCentred tracking="0.15em" variation="h1" color="primary">
+          <Title ref={titleRef}>
+            <CTitle
+              inView={TitleInView}
+              isCentred
+              tracking="0.15em"
+              variation="h1"
+              color="primary"
+            >
               Nos Services
             </CTitle>
-            <CTitle isCentred tracking="0.2em" variation="h2" color="secondary">
+            <CTitle
+              inView={TitleInView}
+              isCentred
+              tracking="0.2em"
+              variation="h2"
+              color="secondary"
+            >
               Nous offrons une gamme de traitements efficaces pour soulager la
               douleur et améliorer la santé générale.
             </CTitle>
             <Separator></Separator>
-            <InfoContainer>
+            <InfoContainer ref={shiatuRef}>
               <CTitle
+                inView={ShiatuInView}
                 mb={"100px"}
                 tracking="0.1em"
                 isCentred
@@ -49,6 +69,7 @@ export default function Service() {
               </CTitle>
               <GridContainer>
                 <Cp
+                  inView={ShiatuInView}
                   color="main"
                   size="xl_regular"
                   weight="Bold"
@@ -59,18 +80,21 @@ export default function Service() {
                   à soulager la douleur et à restaurer la mobilité.
                 </Cp>
                 <CImage
+                  inView={ShiatuInView}
                   src={"src/data/image2.png"}
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
                 />
                 <CImage
+                  inView={ShiatuInView}
                   src={"src/data/image3.png"}
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
                 />
                 <Cp
+                  inView={ShiatuInView}
                   color="main"
                   size="xl_regular"
                   weight="Bold"
@@ -83,8 +107,9 @@ export default function Service() {
               </GridContainer>
             </InfoContainer>
             <Separator></Separator>
-            <InfoContainer>
+            <InfoContainer ref={osteoRef}>
               <CTitle
+                inView={osteoInView}
                 tracking="0.1em"
                 mb={"100px"}
                 isCentred
@@ -95,6 +120,7 @@ export default function Service() {
               </CTitle>
               <GridContainer>
                 <Cp
+                  inView={osteoInView}
                   color="main"
                   size="xl_regular"
                   weight="Bold"
@@ -105,18 +131,21 @@ export default function Service() {
                   aide à rétablir l'équilibre énergétique du corps.
                 </Cp>
                 <CImage
+                  inView={osteoInView}
                   src={"src/data/image0.png"}
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
                 />
                 <CImage
+                  inView={osteoInView}
                   src={"src/data/image1.png"}
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
                 />
                 <Cp
+                  inView={osteoInView}
                   color="main"
                   size="xl_regular"
                   weight="Bold"

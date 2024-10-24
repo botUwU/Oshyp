@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
+import { useInView } from "react-intersection-observer";
 
 const Header = () => {
   const {
@@ -19,17 +20,23 @@ const Header = () => {
     contactRef,
     scrollToSection,
   } = useScroll();
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   return (
     <div
       style={{
         backgroundColor: colors.backGroundColor.mainWhite,
         zIndex: 10,
       }}
+      ref={ref}
     >
       <Headercontainer>
         <nav>
           <UL>
             <HeaderItem
+              inView={inView}
               name="Accueil"
               onScroll={() => scrollToSection(homeRef)}
             >
@@ -37,6 +44,7 @@ const Header = () => {
             </HeaderItem>
 
             <HeaderItem
+              inView={inView}
               name="Services"
               onScroll={() => scrollToSection(servicesRef)}
             >
@@ -44,6 +52,7 @@ const Header = () => {
             </HeaderItem>
 
             <HeaderItem
+              inView={inView}
               name="Testimonials"
               onScroll={() => scrollToSection(testimonialsRef)}
             >
@@ -51,6 +60,7 @@ const Header = () => {
             </HeaderItem>
 
             <HeaderItem
+              inView={inView}
               name="Tarifs"
               onScroll={() => scrollToSection(pricingRef)}
             >
@@ -58,6 +68,7 @@ const Header = () => {
             </HeaderItem>
 
             <HeaderItem
+              inView={inView}
               name="Contact"
               onScroll={() => scrollToSection(contactRef)}
             >

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function Cp({
@@ -9,10 +9,12 @@ export default function Cp({
   weight = "medium",
   color = "main",
   tracking,
+  inView,
 }) {
   const [fontSize, fontWeight] = size.split("_");
   return (
     <P
+      inView={inView}
       tracking={tracking}
       isCentred={isCentred}
       color={color}
@@ -90,4 +92,20 @@ const P = styled.p`
   }};
   text-align: ${(props) => (props.isCentred ? "center" : "left")};
   letter-spacing: ${(props) => props.tracking || undefined};
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  ${(props) => {
+    if (props.inView) {
+      return css`
+        opacity: 1;
+        transform: translateY(0);
+      `;
+    } else {
+      return css`
+        opacity: 0;
+        transform: translateY(50);
+      `;
+    }
+  }}
 `;

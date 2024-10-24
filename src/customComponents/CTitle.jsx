@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function CTitle({
@@ -10,10 +10,12 @@ export default function CTitle({
   tracking = "0.1em",
   mb,
   mt,
+  inView,
 }) {
   if (variation === "h1") {
     return (
       <Title1
+        inView={inView}
         mb={mb}
         mt={mt}
         tracking={tracking}
@@ -26,6 +28,7 @@ export default function CTitle({
   } else {
     return (
       <Title2
+        inView={inView}
         mb={mb}
         mt={mt}
         tracking={tracking}
@@ -47,6 +50,21 @@ const Title1 = styled.h1`
   letter-spacing: ${(props) => props.tracking || undefined};
   margin-bottom: ${(props) => props.mb || undefined};
   margin-top: ${(props) => props.mt || undefined};
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  ${(props) => {
+    if (props.inView) {
+      return css`
+        opacity: 1;
+        transform: translateY(0);
+      `;
+    } else {
+      return css`
+        opacity: 0;
+        transform: translateY(50);
+      `;
+    }
+  }}
 `;
 
 const Title2 = styled.h2`
@@ -58,4 +76,19 @@ const Title2 = styled.h2`
   letter-spacing: ${(props) => props.tracking || undefined};
   margin-bottom: ${(props) => props.mb || undefined};
   margin-top: ${(props) => props.mt || undefined};
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  ${(props) => {
+    if (props.inView) {
+      return css`
+        opacity: 1;
+        transform: translateY(0);
+      `;
+    } else {
+      return css`
+        opacity: 0;
+        transform: translateY(50);
+      `;
+    }
+  }}
 `;
