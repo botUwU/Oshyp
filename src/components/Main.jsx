@@ -6,6 +6,7 @@ import Pricing from "./Pricing";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Separator from "../customComponents/Separator";
+import BusinessCard from "./BusinessCard";
 export default function Main() {
   const { homeRef, servicesRef, testimonialsRef } = useScroll();
   return (
@@ -15,7 +16,7 @@ export default function Main() {
       <Service />
       <Testimonial />
       <Pricing />
-      <Contact />
+      <BusinessCard />
       <Footer />
     </>
   );

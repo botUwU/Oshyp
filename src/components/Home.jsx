@@ -79,7 +79,7 @@ export default function Home() {
         <HomeContainer>
           <Description>
             <CTitle variation="h1" tracking="0.2em" color="primary">
-              Rencontrez Miguel Duenas{" "}
+              Rencontrez Miguel Duenas
             </CTitle>
             <CTitle variation="h2" tracking="0.2em" color="secondary">
               Découvrez des traitements naturels et efficaces pour les douleurs
