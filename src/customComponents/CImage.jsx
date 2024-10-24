@@ -10,10 +10,17 @@ export default function CImage({
   src,
   fit = "cover",
   rounded = false,
+  inView,
 }) {
   return (
     <div style={{ height: height, width: width }}>
-      <Image src={src} shadow={shadow} fit={fit} rounded={rounded} />
+      <Image
+        inView={inView}
+        src={src}
+        shadow={shadow}
+        fit={fit}
+        rounded={rounded}
+      />
     </div>
   );
 }
@@ -24,6 +31,8 @@ const Image = styled.img`
   object-fit: ${(props) => (props.fit === "cover" ? "cover" : "contain")};
   border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 
   &:hover {
     transform: scale(1.1) translateY(-25px);
@@ -44,6 +53,19 @@ const Image = styled.img`
         `;
       default:
         return;
+    }
+  }}
+  ${(props) => {
+    if (props.inView) {
+      return css`
+        opacity: 1;
+        transform: translateY(0);
+      `;
+    } else {
+      return css`
+        opacity: 0;
+        transform: translateY(50);
+      `;
     }
   }}
 `;

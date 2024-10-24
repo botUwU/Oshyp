@@ -4,6 +4,7 @@ import CTitle from "./CTitle";
 import Cp from "../customComponents/Cp";
 import formatCurrencyEuro from "../helper/currencyformat";
 import { colors } from "../constants/colors";
+import { useInView } from "react-intersection-observer";
 
 export default function PriceContainer({
   title,
@@ -12,15 +13,20 @@ export default function PriceContainer({
   benefits,
   conclusion,
 }) {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   return (
-    <Price>
-      <CTitle isCentred={true} variation="h1" color="primary">
+    <Price ref={ref}>
+      <CTitle inView={inView} isCentred={true} variation="h1" color="primary">
         {title}
       </CTitle>
       <UL>
         {benefits.map((benefit, index) => (
           <li key={index}>
             <Cp
+              inView={inView}
               tracking={"0.1rem"}
               color="main"
               weight="Bold"
@@ -29,32 +35,38 @@ export default function PriceContainer({
               <i>{benefit.title}:</i>
               {"   "}
             </Cp>
-            <Cp color="main" size="lg_regular">
+            <Cp inView={inView} color="main" size="lg_regular">
               {benefit.description}
             </Cp>
           </li>
         ))}
       </UL>
 
-      <Cp isCentred color="main" weight="Bold" size="xxl_regular">
+      <Cp
+        inView={inView}
+        isCentred
+        color="main"
+        weight="Bold"
+        size="xxl_regular"
+      >
         {conclusion.description}
       </Cp>
 
       <Info>
         <InfoItem>
-          <Cp color="main" weight="Bold" size="xxl_regular">
+          <Cp inView={inView} color="main" weight="Bold" size="xxl_regular">
             Durree de la seance:
           </Cp>
-          <Cp color="main" size="lg_regular">
+          <Cp inView={inView} color="main" size="lg_regular">
             {" "}
             {duration}
           </Cp>
         </InfoItem>
         <InfoItem>
-          <Cp color="main" weight="Bold" size="xxl_regular">
+          <Cp inView={inView} color="main" weight="Bold" size="xxl_regular">
             Prix :
           </Cp>
-          <Cp color="main" size="lg_regular">
+          <Cp inView={inView} color="main" size="lg_regular">
             {formatCurrencyEuro(price)}
           </Cp>
         </InfoItem>

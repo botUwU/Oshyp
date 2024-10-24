@@ -57,6 +57,11 @@ export const Section = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: ${(props) => props.color};
+  width: 100%;
+
+  @media (max-width: 1280px) {
+    padding: 30px 0px;
+  }
 `;
 //hadhi matmeshach khalaha heka
 //do not fking touch this

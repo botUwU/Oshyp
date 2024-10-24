@@ -6,26 +6,31 @@ import CTitle from "../customComponents/CTitle";
 import styled from "styled-components";
 import { colors } from "../constants/colors";
 import Cp from "../customComponents/Cp";
+import { useInView } from "react-intersection-observer";
 
 export default function Testimonials() {
   const { testimonialsRef } = useScroll();
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
 
   return (
     <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
       <Section ref={testimonialsRef} type="vertical">
-        <Container>
-          <CTitle isCentred variation="h1" color="primary">
+        <Container ref={ref}>
+          <CTitle inView={inView} isCentred variation="h1" color="primary">
             Témoignages
           </CTitle>
 
-          <CTitle isCentred variation="h2" color="secondary">
+          <CTitle inView={inView} isCentred variation="h2" color="secondary">
             Voici ce que nos clients disent de nos services.
           </CTitle>
 
           <TestimonialWrapper>
             {/* Testimonial 1 */}
             <TestimonialCard>
-              <Cp color="dark">
+              <Cp inView={inView} color="dark">
                 "L'Ostéothérapie m'a permis de retrouver ma mobilité en quelques
                 séances seulement. Miguel est très professionnel et
                 attentionné."
@@ -35,7 +40,7 @@ export default function Testimonials() {
 
             {/* Testimonial 2 */}
             <TestimonialCard>
-              <Cp color="dark">
+              <Cp inView={inView} color="dark">
                 "Le Shiatsu m'a vraiment aidé à réduire mon stress et à mieux
                 gérer mon quotidien. Je recommande vivement !"
               </Cp>
@@ -44,7 +49,7 @@ export default function Testimonials() {
 
             {/* Testimonial 3 */}
             <TestimonialCard>
-              <Cp color="dark">
+              <Cp inView={inView} color="dark">
                 "Un service exceptionnel ! Mes douleurs de dos ont quasiment
                 disparu après quelques séances d'Ostéothérapie."
               </Cp>
