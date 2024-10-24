@@ -11,6 +11,8 @@ export default function CTitle({
   mb,
   mt,
   inView,
+  height = null,
+  width = null,
 }) {
   if (variation === "h1") {
     return (
@@ -21,6 +23,8 @@ export default function CTitle({
         tracking={tracking}
         isCentred={isCentred}
         color={color}
+        height={height}
+        width={width}
       >
         {children}
       </Title1>
@@ -34,6 +38,8 @@ export default function CTitle({
         tracking={tracking}
         isCentred={isCentred}
         color={color}
+        height={height}
+        width={width}
       >
         {children}
       </Title2>
@@ -42,8 +48,31 @@ export default function CTitle({
 }
 
 const Title1 = styled.h1`
-  color: ${(props) =>
-    props.color === "primary" ? colors.title.primary : colors.title.secondary};
+  ${(props) => {
+    if (props.height) {
+      return css`
+        height: ${props.height};
+      `;
+    }
+  }}
+  ${(props) => {
+    if (props.width) {
+      return css`
+        width: ${props.width};
+      `;
+    }
+  }}
+  color: ${(props) => {
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+    if (props.color === "secondary") {
+      return colors.title.secondary;
+    }
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+  }};
   font-weight: 700;
   font-family: "PlaywriteGBS-Regular";
   text-align: ${(props) => (props.isCentred ? "center" : "left")};
@@ -68,8 +97,32 @@ const Title1 = styled.h1`
 `;
 
 const Title2 = styled.h2`
-  color: ${(props) =>
-    props.color === "primary" ? colors.title.primary : colors.title.secondary};
+  ${(props) => {
+    if (props.height) {
+      return css`
+        height: ${props.height};
+      `;
+    }
+  }}
+  ${(props) => {
+    if (props.width) {
+      return css`
+        width: ${props.width};
+      `;
+    }
+  }}
+
+  color: ${(props) => {
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+    if (props.color === "secondary") {
+      return colors.title.secondary;
+    }
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+  }};
   font-weight: 700;
   font-family: "PlaywriteGBS-Regular";
   text-align: ${(props) => (props.isCentred ? "center" : "left")};

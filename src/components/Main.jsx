@@ -3,7 +3,6 @@ import Home from "./Home";
 import Service from "./Service";
 import Testimonial from "./Testimonial";
 import Pricing from "./Pricing";
-import Contact from "./Contact";
 import Footer from "./Footer";
 import Separator from "../customComponents/Separator";
 import BusinessCard from "./BusinessCard";
