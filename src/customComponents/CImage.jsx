@@ -22,7 +22,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: ${(props) => (props.fit === "cover" ? "cover" : "contain")};
-  border-radius: ${(props) => (props.rounded ? "100%" : "0px")};
+  border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
