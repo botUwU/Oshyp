@@ -33,6 +33,7 @@ export const colors = {
     black: palette.black,
     error: palette.deepRed,
     success: palette.lightGreen,
+    secondary: palette.mainBlue,
   },
   backGroundColor: {
     main: palette.backGroundColor,

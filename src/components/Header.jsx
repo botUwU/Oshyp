@@ -10,14 +10,14 @@ import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
 import { useInView } from "react-intersection-observer";
-
+import BusinessCard from "./BusinessCard";
 const Header = () => {
   const {
     homeRef,
     pricingRef,
     servicesRef,
     testimonialsRef,
-    contactRef,
+    businessCardRef,
     scrollToSection,
   } = useScroll();
   const { ref, inView } = useInView({
@@ -70,7 +70,7 @@ const Header = () => {
             <HeaderItem
               inView={inView}
               name="Contact"
-              onScroll={() => scrollToSection(contactRef)}
+              onScroll={() => scrollToSection(businessCardRef)}
             >
               <IoIosContact size={"30px"} />
             </HeaderItem>

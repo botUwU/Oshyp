@@ -11,6 +11,8 @@ export default function CImage({
   fit = "cover",
   rounded = false,
   inView,
+  grayScale = false,
+  isAnimated = true,
 }) {
   return (
     <div style={{ height: height, width: width }}>
@@ -20,6 +22,8 @@ export default function CImage({
         shadow={shadow}
         fit={fit}
         rounded={rounded}
+        grayScale={grayScale}
+        isAnimated={isAnimated}
       />
     </div>
   );
@@ -32,11 +36,18 @@ const Image = styled.img`
   border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(50px);
+  filter: grayscale(${(props) => props.grayScale});
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  ${(props) => {
+    if (props.isAnimated) {
+      return css`
+        &:hover {
+          transform: scale(1.1) translateY(-25px);
+        }
+      `;
+    }
+  }}
 
-  &:hover {
-    transform: scale(1.1) translateY(-25px);
-  }
   ${(props) => {
     switch (props.shadow) {
       case "small":
