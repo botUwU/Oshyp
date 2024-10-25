@@ -42,8 +42,17 @@ export default function CTitle({
 }
 
 const Title1 = styled.h1`
-  color: ${(props) =>
-    props.color === "primary" ? colors.title.primary : colors.title.secondary};
+  color: ${(props) => {
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+    if (props.color === "secondary") {
+      return colors.title.secondary;
+    }
+    if (props.color === "white") {
+      return colors.title.white;
+    }
+  }};
   font-weight: 700;
   font-family: "PlaywriteGBS-Regular";
   text-align: ${(props) => (props.isCentred ? "center" : "left")};
@@ -68,8 +77,17 @@ const Title1 = styled.h1`
 `;
 
 const Title2 = styled.h2`
-  color: ${(props) =>
-    props.color === "primary" ? colors.title.primary : colors.title.secondary};
+  color: ${(props) => {
+    if (props.color === "primary") {
+      return colors.title.primary;
+    }
+    if (props.color === "secondary") {
+      return colors.title.secondary;
+    }
+    if (props.color === "white") {
+      return colors.title.white;
+    }
+  }};
   font-weight: 700;
   font-family: "PlaywriteGBS-Regular";
   text-align: ${(props) => (props.isCentred ? "center" : "left")};

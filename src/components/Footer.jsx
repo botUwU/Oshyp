@@ -15,9 +15,10 @@ const Footer = () => {
   return (
     <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
       <FooterSection ref={ref}>
-        <ContactDiv>
-          <CTitle inView={inView}>Contactez-nous</CTitle>
-        </ContactDiv>
+        <CTitle isCentred inView={inView}>
+          Contactez-nous
+        </CTitle>
+
         <InformationDiv>
           <CTitle inView={inView} variation="h3" color="secondary">
             Vous avez des questions ou souhaitez prendre rendez-vous ?
