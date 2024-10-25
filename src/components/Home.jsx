@@ -54,6 +54,7 @@ export default function Home() {
             height={"50%"}
             width={"20%"}
             rounded={false}
+            grayScale={true}
             shadow={"medium"}
           />
         </HomeContainer>

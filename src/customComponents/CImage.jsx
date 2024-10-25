@@ -36,7 +36,12 @@ const Image = styled.img`
   border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(50px);
-  filter: grayscale(${(props) => props.grayScale});
+  ${(props) => {
+    if (props.grayScale)
+      return css`
+        filter: grayscale(100%);
+      `;
+  }}
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   ${(props) => {
     if (props.isAnimated) {
