@@ -4,7 +4,6 @@ import { colors } from "../constants/colors";
 import { shadows } from "../constants/shadow";
 
 export default function CImage({
-  center = false,
   brightness = 1,
   shadow,
   height = 250,
@@ -27,8 +26,7 @@ export default function CImage({
         grayScale={grayScale}
         isAnimated={isAnimated}
         brightness={brightness}
-        center={center}
-      />
+        />
     </div>
   );
 }
@@ -86,13 +84,6 @@ const Image = styled.img`
       return css`
         opacity: 0;
         transform: translateY(50);
-      `;
-    }
-  }}
-  ${(props) => {
-    if (props.center) {
-      return css`
-        object-fit: contain;
       `;
     }
   }}
