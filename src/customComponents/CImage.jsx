@@ -1,9 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { colors } from "../constants/colors";
-import { shadows } from "../constants/shadow";
 
 export default function CImage({
+  style,
   brightness = 1,
   shadow,
   height = 250,
@@ -18,6 +17,7 @@ export default function CImage({
   return (
     <div style={{ height: height, width: width }}>
       <Image
+        style={style}
         inView={inView}
         src={src}
         shadow={shadow}
@@ -26,25 +26,23 @@ export default function CImage({
         grayScale={grayScale}
         isAnimated={isAnimated}
         brightness={brightness}
-        />
+      />
     </div>
   );
 }
 
-const Image = styled.img`
+const Image = styled.img.attrs((props) => ({
+  style: props.style ? { ...props.style } : {},
+}))`
   width: 100%;
   height: 100%;
-  filter: brightness(${(props) => props.brightness});
   object-fit: ${(props) => (props.fit === "cover" ? "cover" : "contain")};
   border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(50px);
-  ${(props) => {
-    if (props.grayScale)
-      return css`
-        filter: grayscale(100%);
-      `;
-  }}
+
+  filter: ${(props) =>
+    `brightness(${props.brightness}) grayscale(${props.grayScale ? 1 : 0})`};
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   ${(props) => {
     if (props.isAnimated) {

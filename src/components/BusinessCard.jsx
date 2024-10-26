@@ -20,6 +20,7 @@ function BusinessCard() {
         </CTitle>
         <ImageWithText inView={inView}>
           <CImage
+            style={{ borderRadius: "0%" }}
             brightness={0.5}
             rounded={false}
             src={"src/data/water.png"}
@@ -41,7 +42,8 @@ function BusinessCard() {
                   </CTitle>
                 </HeaderTitle>
                 <CImage
-                  center={true}
+                  style={{ borderRadius: 0 }}
+                  fit="contain"
                   width={"20%"}
                   height={"100%"}
                   src={"src/data/randomQR.png"}

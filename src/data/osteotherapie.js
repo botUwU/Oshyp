@@ -1,39 +1,41 @@
 export const osteotherapie = {
-  title: "Osteotherapie",
+  title: "Ostéothérapie",
   price: "60",
   duration: "De 45 mn à 1h15",
   benefits: [
     {
-      title: "Pain relief",
-      description: "Quickly alleviates pain in a safe and gentle way. ✨🛠️",
-    },
-    {
-      title: "Restores mobility",
-      description: "Improves joint and muscle flexibility. 🏃‍♂️💪",
-    },
-    {
-      title: "Non-invasive",
+      title: "Soulagement de la douleur",
       description:
-        "Uses soft, risk-free techniques without strong manipulations. 👐🧘‍♀️",
+        "Soulage rapidement la douleur de manière douce et sécurisée. ✨🛠️",
     },
     {
-      title: "Holistic approach",
+      title: "Restaure la mobilité",
       description:
-        "Addresses the whole body, improving balance and alignment. ⚖️🌿",
+        "Améliore la flexibilité des articulations et des muscles. 🏃‍♂️💪",
     },
     {
-      title: "Prevents recurrence",
+      title: "Non-invasif",
       description:
-        "Provides exercises for self-care to maintain long-term results. 🔄🧘‍♂️",
+        "Utilise des techniques douces et sans risque, sans manipulations fortes. 👐🧘‍♀️",
     },
     {
-      title: "Suitable for all ages",
+      title: "Approche holistique",
       description:
-        "Effective for children, elderly, and those with weaker conditions. 👶👵",
+        "Prend en compte l'ensemble du corps, améliorant l'équilibre et l'alignement. ⚖️🌿",
+    },
+    {
+      title: "Prévient les récidives",
+      description:
+        "Fournit des exercices pour l'auto-soin afin de maintenir des résultats durables. 🔄🧘‍♂️",
+    },
+    {
+      title: "Adapté à tous les âges",
+      description:
+        "Efficace pour les enfants, les personnes âgées et celles avec des conditions plus faibles. 👶👵",
     },
   ],
   conclusion: {
     description:
-      "It's ideal for treating sciatica, migraines, joint pain, and tendinitis. 🧠🦵",
+      "Idéal pour traiter la sciatique, les migraines, les douleurs articulaires et les tendinites. 🧠🦵",
   },
 };
