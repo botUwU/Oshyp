@@ -4,6 +4,7 @@ import { colors } from "../constants/colors";
 import { shadows } from "../constants/shadow";
 
 export default function CImage({
+  brightness = 1,
   shadow,
   height = 250,
   width = 250,
@@ -24,7 +25,8 @@ export default function CImage({
         rounded={rounded}
         grayScale={grayScale}
         isAnimated={isAnimated}
-      />
+        brightness={brightness}
+        />
     </div>
   );
 }
@@ -32,6 +34,7 @@ export default function CImage({
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  filter: brightness(${(props) => props.brightness});
   object-fit: ${(props) => (props.fit === "cover" ? "cover" : "contain")};
   border-radius: ${(props) => (props.rounded ? "100%" : "10%")};
   transition: transform 750ms cubic-bezier(0.175, 0.885, 0.32, 1.275);

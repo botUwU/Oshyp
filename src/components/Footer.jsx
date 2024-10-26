@@ -16,6 +16,7 @@ const Footer = () => {
   return (
     <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
       <FooterSection ref={ref}>
+
         <Informations>
           <InfoItem>
             <CTitle
