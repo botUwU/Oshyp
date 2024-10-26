@@ -4,32 +4,33 @@ export const shiatsu = {
   duration: "1h",
   benefits: [
     {
-      title: "Boosts natural defenses",
-      description: "Strengthens the immune system. 💪🛡️",
+      title: "Renforce les défenses naturelles",
+      description: "Renforce le système immunitaire. 💪🛡️",
     },
     {
-      title: "Balances energy (Ki)",
-      description: "Restores energy flow for overall well-being. ⚡🧘‍♂️",
+      title: "Équilibre l'énergie (Ki)",
+      description: "Restaure le flux d'énergie pour le bien-être global. ⚡🧘‍♂️",
     },
     {
-      title: "Relieves physical discomfort",
-      description: "Eases muscle and joint pain, improves circulation. 💆‍♀️🩹",
+      title: "Soulage l'inconfort physique",
+      description:
+        "Apaise les douleurs musculaires et articulaires, améliore la circulation. 💆‍♀️🩹",
     },
     {
-      title: "Reduces stress",
-      description: "Promotes relaxation and improves sleep. 😌🛌",
+      title: "Réduit le stress",
+      description: "Favorise la relaxation et améliore le sommeil. 😌🛌",
     },
     {
-      title: "Enhances mental clarity",
-      description: "Helps prevent anxiety and depression. 🧠🌿",
+      title: "Améliore la clarté mentale",
+      description: "Aide à prévenir l'anxiété et la dépression. 🧠🌿",
     },
     {
-      title: "Improves overall health",
-      description: "Supports physical and emotional healing. ❤️‍🩹🌟",
+      title: "Améliore la santé globale",
+      description: "Favorise la guérison physique et émotionnelle. ❤️‍🩹🌟",
     },
   ],
   conclusion: {
     description:
-      "It brings deep relaxation and helps release emotional and physical tension. 🧘‍♀️🌸",
+      "Il apporte une relaxation profonde et aide à libérer les tensions émotionnelles et physiques. 🧘‍♀️🌸",
   },
 };
