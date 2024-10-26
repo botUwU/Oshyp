@@ -51,8 +51,8 @@ export default function Home() {
           <CImage
             inView={inView}
             src="src\data\image.png"
-            height={"50%"}
-            width={"20%"}
+            height={"90%"}
+            width={"30%"}
             rounded={false}
             grayScale={true}
             shadow={"medium"}
