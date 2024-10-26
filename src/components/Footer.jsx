@@ -7,6 +7,7 @@ import { colors } from "../constants/colors";
 import CTitle from "../customComponents/CTitle";
 import Cp from "../customComponents/Cp";
 import { useInView } from "react-intersection-observer";
+import Separator from "../customComponents/Separator";
 const Footer = () => {
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -15,28 +16,53 @@ const Footer = () => {
   return (
     <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
       <FooterSection ref={ref}>
-        <ContactDiv>
-          <CTitle inView={inView}>Contactez-nous</CTitle>
-        </ContactDiv>
-        <InformationDiv>
-          <CTitle inView={inView} variation="h3" color="secondary">
-            Vous avez des questions ou souhaitez prendre rendez-vous ?
-          </CTitle>
-          <AboutsDiv>
-            <Cp inView={inView} size="xl_regular" color="dark">
-              Adresse: 9 Rue de Figeac – 31450 BELBERAUD
-            </Cp>
-            <Cp inView={inView} size="xl_regular" color="dark">
-              Téléphone: +216 646870652
-            </Cp>
-            <Cp inView={inView} size="xl_regular" color="dark">
-              Email: oshypmd@gmail.com
-            </Cp>
-          </AboutsDiv>
-        </InformationDiv>
-        <CTitle inView={inView} variation="h2" color="primary">
-          Miguel DUENAS
-        </CTitle>
+        <Informations>
+          <InfoItem>
+            <CTitle
+              inView={inView}
+              variation="h1"
+              tracking="0.2em"
+              color="primary"
+            >
+              Contacter-nous
+            </CTitle>
+            <BlockLine>
+              <Cp size="lg_regular" weight="Bold" inView={inView}>
+                Mail :
+              </Cp>
+              <Cp inView={inView}>oshypmd@gmail.com</Cp>
+            </BlockLine>
+            <BlockLine>
+              <Cp size="lg_regular" weight="Bold" inView={inView}>
+                Telephone :
+              </Cp>
+              <Cp inView={inView}>oshypmd@gmail.com</Cp>
+            </BlockLine>
+          </InfoItem>
+          <InfoItem>
+            <CTitle
+              inView={inView}
+              variation="h1"
+              tracking="0.2em"
+              color="primary"
+            >
+              retrouvez-nous
+            </CTitle>
+            <BlockLine>
+              <Cp size="lg_regular" weight="Bold" inView={inView}>
+                Adresse :
+              </Cp>
+              <Cp inView={inView}>9, Rue de Figeac – 31450 BELBERAUD</Cp>
+            </BlockLine>
+          </InfoItem>
+        </Informations>
+        <Separator></Separator>
+        <div style={{ marginTop: "20px" }}>
+          <Cp inView={inView} weight="Bold" size="lg_regular" color="primary">
+            Séances sur RDV tous les vendredis de 8h00 à 12h00 et de 14h00 à
+            17h00
+          </Cp>
+        </div>
       </FooterSection>
     </div>
   );
@@ -45,34 +71,38 @@ const Footer = () => {
 export default Footer;
 
 const FooterSection = styled.div`
-  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 36px;
+  padding: 12px 24px;
   width: 100%;
   background-color: ${colors.backGroundColor.cyan};
-  box-shadow: 0px -8px 10.32px rgba(0, 0, 0, 0.2);
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
+  box-shadow: 0px -8px 10.54px rgba(0, 0, 0, 0.2);
 `;
-const ContactDiv = styled.div`
+
+const Informations = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `;
-const InformationDiv = styled.div`
+
+const InfoItem = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 20px;
-`;
-const AboutsDiv = styled.div`
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: center;
+  gap: 12px;
+`;
+
+const BlockLine = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0px 0px;
+  margin-bottom: 12px;
 `;

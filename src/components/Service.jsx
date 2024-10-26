@@ -85,6 +85,7 @@ export default function Service() {
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
+                  grayScale={true}
                 />
                 <CImage
                   inView={ShiatuInView}
@@ -92,6 +93,7 @@ export default function Service() {
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
+                  grayScale={true}
                 />
                 <Cp
                   inView={ShiatuInView}
@@ -136,6 +138,7 @@ export default function Service() {
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
+                  grayScale={true}
                 />
                 <CImage
                   inView={osteoInView}
@@ -143,6 +146,7 @@ export default function Service() {
                   height={"250px"}
                   fit="cover"
                   shadow={"small"}
+                  grayScale={true}
                 />
                 <Cp
                   inView={osteoInView}
