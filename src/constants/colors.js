@@ -45,13 +45,13 @@ export const colors = {
     buttonBackGroundColor: {
       primary: palette.textColor,
       secondary: palette.mainBlue,
-      sucess: palette.lightGreen,
+      success: palette.lightGreen,
       danger: palette.deepRed,
     },
     buttonTextColor: {
       primary: palette.white,
       secondary: palette.white,
-      sucess: palette.white,
+      success: palette.white,
       danger: palette.white,
     },
   },
