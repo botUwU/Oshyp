@@ -1,5 +1,5 @@
 // src/GlobalStyle.js
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import ExtraLight from "./assets/fonts/PlaywriteGBS-ExtraLight.ttf";
 import ExtraLightItalic from "./assets/fonts/PlaywriteGBS-ExtraLightItalic.ttf";
 import Italic from "./assets/fonts/PlaywriteGBS-Italic.ttf";
@@ -48,7 +48,9 @@ const GlobalStyle = createGlobalStyle`
 
 export default GlobalStyle;
 
-export const Section = styled.div`
+export const Section = styled.div.attrs((props) => ({
+  style: props.style ? { ...props.style } : {},
+}))`
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
@@ -59,9 +61,15 @@ export const Section = styled.div`
   background-color: ${(props) => props.color};
   width: 100%;
 
-  @media (max-width: 1280px) {
-    padding: 30px 0px;
-  }
+  ${(props) =>
+    props.mediaQueries &&
+    props.mediaQueries.map(
+      ({ width, styles }) => css`
+        @media (max-width: ${width}) {
+          ${styles}
+        }
+      `
+    )}
 `;
 //hadhi matmeshach khalaha heka
 //do not fking touch this

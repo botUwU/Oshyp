@@ -18,7 +18,7 @@ export default function Pricing() {
   });
   return (
     <div>
-      <Section ref={pricingRef}>
+      <Section style={{ padding: "0 0" }} ref={pricingRef}>
         <PricingContainer ref={ref}>
           <CTitle
             inView={inView}
@@ -65,26 +65,27 @@ const PricingSection = styled.div`
   padding: 0 60px;
 
   @media (max-width: 1280px) {
-    padding: 0 0;
+    padding: 0 60px;
+    grid-template-columns: 1fr;
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 1100px) {
+    padding: 0 0px;
   }
 `;
 
 const PricingContainer = styled.div`
-  padding: 60px 60px;
+  padding: 60px 0px;
 
   @media (max-width: 1280px) {
-    padding: 60px 20px;
+    padding: 60px 170px;
   }
 
   @media (max-width: 900px) {
-    padding: 60px 60px;
+    padding: 60px 80px;
   }
 
-  @media (max-width: 600px) {
-    padding: 60px 30px;
+  @media (max-width: 750px) {
+    padding: 60px 40px;
   }
 `;

@@ -13,9 +13,11 @@ export default function CImage({
   inView,
   grayScale = false,
   isAnimated = true,
+  mediaQueries,
+  WrapperStyle,
 }) {
   return (
-    <div style={{ height: height, width: width }}>
+    <ImageWrapper WrapperStyle={WrapperStyle} width={width} height={height}>
       <Image
         style={style}
         inView={inView}
@@ -26,10 +28,18 @@ export default function CImage({
         grayScale={grayScale}
         isAnimated={isAnimated}
         brightness={brightness}
+        mediaQueries={mediaQueries}
       />
-    </div>
+    </ImageWrapper>
   );
 }
+
+const ImageWrapper = styled.div.attrs((props) => ({
+  style: props.WrapperStyle ? { ...props.WrapperStyle } : {},
+}))`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+`;
 
 const Image = styled.img.attrs((props) => ({
   style: props.style ? { ...props.style } : {},
@@ -85,4 +95,13 @@ const Image = styled.img.attrs((props) => ({
       `;
     }
   }}
+   ${(props) =>
+    props.mediaQueries &&
+    props.mediaQueries.map(
+      ({ width, styles }) => css`
+        @media (max-width: ${width}) {
+          ${styles}
+        }
+      `
+    )}
 `;
