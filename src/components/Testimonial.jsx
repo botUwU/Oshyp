@@ -68,7 +68,7 @@ const TestimonialWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 20px;
+  padding: 0;
 `;
 
 // Styled component for individual testimonials
@@ -86,6 +86,9 @@ const TestimonialCard = styled.div`
 
   &:hover {
     transform: translateY(-10px); /* Slight hover effect */
+  }
+  @media (max-width: 950px) {
+    width: 90%;
   }
 `;
 

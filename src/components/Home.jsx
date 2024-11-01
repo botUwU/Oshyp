@@ -2,7 +2,7 @@ import React from "react";
 import { useScroll } from "../helper/useScroll";
 import { Section } from "../GlobalStyle";
 import CTitle from "../customComponents/CTitle";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 import CImage from "../customComponents/CImage";
@@ -15,9 +15,15 @@ export default function Home() {
     triggerOnce: false,
     threshold: 0.1,
   });
+  const homeMediaQueries = [
+    {
+      width: "1000px",
+      styles: css``,
+    },
+  ];
   return (
     <WrapperContainer ref={ref}>
-      <Section ref={homeRef}>
+      <Section mediaQueries={homeMediaQueries} ref={homeRef}>
         <HomeContainer>
           <Description>
             <CTitle
@@ -52,10 +58,11 @@ export default function Home() {
             inView={inView}
             src="src\data\image.png"
             height={"90%"}
-            width={"30%"}
+            width={"35%"}
             rounded={false}
             grayScale={true}
             shadow={"medium"}
+            WrapperStyle={{ width: "40%" }}
           />
         </HomeContainer>
       </Section>
@@ -67,10 +74,17 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: space-between;
+
+  /* height: 100%; */
   width: 100%;
   gap: 48px;
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+  }
 `;
 const Description = styled.div`
   height: 100%;
@@ -82,6 +96,9 @@ const Description = styled.div`
   align-items: start;
   justify-content: center;
   gap: 30px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 const WrapperContainer = styled.div`
   background-color: ${colors.backGroundColor.mainWhite};

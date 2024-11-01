@@ -95,10 +95,18 @@ const Headercontainer = styled.header`
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   z-index: 10;
+  @media (max-width: 900px) {
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    padding: 12px 32px;
+  }
 `;
 const UL = styled.ul`
   display: flex;
   list-style: none;
   width: 100%;
   gap: 60px;
+  @media (max-width: 900px) {
+    gap: 30px;
+  }
 `;
