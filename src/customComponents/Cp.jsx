@@ -10,6 +10,7 @@ export default function Cp({
   color = "main",
   tracking,
   inView,
+  mediaQueries,
 }) {
   const [fontSize, fontWeight] = size.split("_");
   return (
@@ -21,6 +22,7 @@ export default function Cp({
       fontSize={fontSize}
       fontWeight={fontWeight}
       weight={weight}
+      mediaQueries={mediaQueries}
     >
       {children}
     </P>
@@ -108,4 +110,13 @@ const P = styled.p`
       `;
     }
   }}
+  ${(props) =>
+    props.mediaQueries &&
+    props.mediaQueries.map(
+      ({ width, styles }) => css`
+        @media (max-width: ${width}) {
+          ${styles}
+        }
+      `
+    )}
 `;

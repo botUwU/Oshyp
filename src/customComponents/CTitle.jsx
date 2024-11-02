@@ -11,6 +11,7 @@ export default function CTitle({
   mb,
   mt,
   inView,
+  mediaQueries,
 }) {
   if (variation === "h1") {
     return (
@@ -21,6 +22,7 @@ export default function CTitle({
         tracking={tracking}
         isCentred={isCentred}
         color={color}
+        mediaQueries={mediaQueries}
       >
         {children}
       </Title1>
@@ -34,6 +36,7 @@ export default function CTitle({
         tracking={tracking}
         isCentred={isCentred}
         color={color}
+        mediaQueries={mediaQueries}
       >
         {children}
       </Title2>
@@ -74,6 +77,15 @@ const Title1 = styled.h1`
       `;
     }
   }}
+  ${(props) =>
+    props.mediaQueries &&
+    props.mediaQueries.map(
+      ({ width, styles }) => css`
+        @media (max-width: ${width}) {
+          ${styles}
+        }
+      `
+    )}
 `;
 
 const Title2 = styled.h2`
@@ -109,4 +121,13 @@ const Title2 = styled.h2`
       `;
     }
   }}
+  ${(props) =>
+    props.mediaQueries &&
+    props.mediaQueries.map(
+      ({ width, styles }) => css`
+        @media (max-width: ${width}) {
+          ${styles}
+        }
+      `
+    )}
 `;
