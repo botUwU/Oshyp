@@ -107,7 +107,7 @@ const Header = () => {
 export default Header;
 
 const Headercontainer = styled.header`
-  background-image: url("src/data/berka.png");
+  background-image: url("/berka.png");
 
   background-repeat: no-repeat;
   background-size: cover;

@@ -29,7 +29,7 @@ function BusinessCard() {
             </CTitle>
             <ImageQr>
               <CImage
-                src={"src/data/randomQR.png"}
+                src={"/randomQR.png"}
                 width={"100%"}
                 inView={inView}
                 height={"100%"}
@@ -155,7 +155,7 @@ const BCardSection = styled(Section)`
 const Card = styled.div`
   position: relative;
   width: 75%;
-  background-image: url("src/data/water.png");
+  background-image: url("/water.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
