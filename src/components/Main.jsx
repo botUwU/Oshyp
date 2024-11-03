@@ -7,11 +7,9 @@ import Footer from "./Footer";
 import Separator from "../customComponents/Separator";
 import BusinessCard from "./BusinessCard";
 export default function Main() {
-  const { homeRef, servicesRef, testimonialsRef } = useScroll();
   return (
     <>
       <Home />
-      {/* <Separator></Separator> */}
       <Service />
       <Testimonial />
       <Pricing />

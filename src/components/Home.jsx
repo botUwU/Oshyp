@@ -104,4 +104,5 @@ const WrapperContainer = styled.div`
   background-color: ${colors.backGroundColor.mainWhite};
   display: flex;
   line-height: 1.9;
+  padding-top: 200px;
 `;
