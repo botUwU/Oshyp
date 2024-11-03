@@ -13,205 +13,223 @@ function BusinessCard() {
     threshold: 0.1, // Trigger when 10% of the element is in view
   });
   return (
-    <Card ref={ref}>
+    <CardSection ref={ref}>
       <BCardSection ref={businessCardRef}>
         <CTitle color="secondary" isCentred variation="h1" inView={inView}>
           Carte de Viste:
         </CTitle>
-        <ImageWithText inView={inView}>
-          <CImage
-            style={{ borderRadius: "0%" }}
-            brightness={0.5}
-            rounded={false}
-            src={"src/data/water.png"}
-            height={"100%"}
-            width={"100%"}
-            inView={inView}
-            grayScale={false}
-            isAnimated={false}
-          />
-          <Text inView={true}>
-            <CardTitle>
-              <CardHeader>
-                <HeaderTitle>
-                  <CTitle color="secondary" inView={inView} variation="h1">
-                    OSHYP
-                  </CTitle>
-                  <CTitle color="white" inView={inView} variation="h3">
-                    Miguel DUENAS
-                  </CTitle>
-                </HeaderTitle>
-                <CImage
-                  style={{ borderRadius: 0 }}
-                  fit="contain"
-                  width={"20%"}
-                  height={"100%"}
-                  src={"src/data/randomQR.png"}
-                  inView={inView}
-                  isAnimated={false}
-                />
-              </CardHeader>
-            </CardTitle>
-            <CardServices>
-              <OstéoService>
-                <CTitle inView={inView} variation="h2" color="secondary">
-                  Ostéothérapie{" "}
-                </CTitle>
-                <Cp inView={inView} color="white">
-                  Soulager la douleur et redonner de la mobilité
-                </Cp>
-              </OstéoService>
-              <ShiatsuService>
-                <CTitle inView={inView} variation="h2" color="secondary">
-                  Shiatsu{" "}
-                </CTitle>
-                <Cp color="white" inView={inView}>
-                  Prévenir pour ne pas avoir à guérir
-                </Cp>
-              </ShiatsuService>
-            </CardServices>
-            <CardContact>
-              <Cp
-                weight="Medium"
-                size="lg_ExtraBold"
-                style={{ border: "1px solid red" }}
-                color="white"
+
+        <Card>
+          <Title>
+            <CTitle color="secondary" isCentred variation="h1" inView={inView}>
+              OSHYP
+            </CTitle>
+            <CTitle color="primary" isCentred variation="h2" inView={inView}>
+              Miguel DUENAS
+            </CTitle>
+            <ImageQr>
+              <CImage
+                src={"src/data/randomQR.png"}
+                width={"100%"}
                 inView={inView}
-              >
-                9, Rue de Figeac – 31450 BELBERAUD
-              </Cp>{" "}
+                height={"100%"}
+                isAnimated={false}
+                shadow={"medium"}
+                fit="cover"
+                style={{ borderRadius: "0" }}
+              ></CImage>
+            </ImageQr>
+          </Title>
+          <Methode>
+            <MethodeItem>
+              <CTitle color="primary" isCentred variation="h2" inView={inView}>
+                Ostéothérapie
+              </CTitle>
               <Cp
-                weight="Medium"
-                size="lg_ExtraBold"
-                style={{ border: "1px solid red" }}
-                color="white"
+                isCentred
+                weight="SemiBold"
+                color="main"
+                size="lg_regular"
                 inView={inView}
+                tracking={"0.01em"}
               >
-                tel : 0646870652 mail : oshypmd@gmail.com
+                Soulager la douleur et redonner de la mobilite
               </Cp>
-            </CardContact>
+            </MethodeItem>
+            <MethodeItem>
+              <CTitle color="primary" isCentred variation="h2" inView={inView}>
+                Shiatu
+              </CTitle>
+              <Cp
+                isCentred
+                weight="SemiBold"
+                color="main"
+                size="lg_regular"
+                inView={inView}
+                tracking={"0.01em"}
+              >
+                Prévenir pour ne pas avoir à guérir
+              </Cp>
+            </MethodeItem>
+          </Methode>
+          <Info>
             <Cp
-              size="xl_ExtraBold"
-              weight="Medium"
+              isCentred
+              weight="ExtraBold"
+              color="main"
+              size="lg_regular"
               inView={inView}
-              color="white"
+              tracking={"0.01em"}
             >
               Séances sur RDV tous les vendredis de 8h00 à 12h00 et de 14h00 à
-              17h00{" "}
+              17h00
             </Cp>
-          </Text>
-        </ImageWithText>
+          </Info>
+          <Methode>
+            <MethodeItem>
+              <Cp
+                weight="ExtraBold"
+                isCentred
+                color="secondary"
+                size="lg_regular"
+                inView={inView}
+              >
+                Tel :
+              </Cp>
+              <Cp
+                weight="SemiBold"
+                isCentred
+                color="main"
+                size="lg_regular"
+                inView={inView}
+                tracking={"0.01em"}
+              >
+                0646870652
+              </Cp>
+            </MethodeItem>
+            <MethodeItem>
+              <Cp
+                isCentred
+                weight="ExtraBold"
+                color="secondary"
+                size="lg_regular"
+                inView={inView}
+              >
+                Mail :
+              </Cp>
+              <Cp
+                weight="SemiBold"
+                isCentred
+                color="main"
+                size="lg_regular"
+                inView={inView}
+                tracking={"0.01em"}
+              >
+                oshypmd@gmail.com
+              </Cp>
+            </MethodeItem>
+          </Methode>
+        </Card>
       </BCardSection>
-    </Card>
+    </CardSection>
   );
 }
 
 export default BusinessCard;
 
-const Card = styled.div`
+const CardSection = styled.div`
   background-color: ${colors.backGroundColor.mainWhite};
 `;
-const ImageWithText = styled.div`
+const BCardSection = styled(Section)`
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  @media (max-width: 1000px) {
+    gap: 60px;
+  }
+  @media (max-width: 900px) {
+    padding: 60px 10px;
+  }
+`;
+const Card = styled.div`
   position: relative;
-  width: 70%;
-  height: 70%;
+  width: 75%;
+  background-image: url("src/data/water.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 20.64px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  /* Overlay for darkening effect */
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: ${(props) => (props.inView ? 1 : 0)};
-    transition: opacity 0.5s ease-in-out;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
+    /* Match the card's border radius */
+    z-index: 1;
   }
-`;
 
-const Text = styled.div`
-  gap: 5%;
-  height: 80%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.7);
-  opacity: ${(props) => (props.inView ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out;
-`;
-const BCardSection = styled(Section)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-`;
-
-const CardTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-const CardServices = styled.div`
-  gap: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-const OstéoService = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-`;
-const ShiatsuService = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: end;
-`;
-
-const CardContact = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  /* Content inside the div */
   & > * {
+    position: relative;
+    z-index: 2;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Adjust shadow properties as needed */
+  }
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    padding: 24px 24px;
   }
 `;
-const QR = styled.div`
-  width: 120%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  /* & > * {
-    height: 100%;
-  } */
-`;
-const CardHeader = styled.div`
+
+const Title = styled.div`
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+`;
+
+const Methode = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
 `;
-const HeaderTitle = styled.div`
+
+const Info = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const MethodeItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+`;
+const ImageQr = styled.div`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
 `;

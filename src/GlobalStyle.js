@@ -51,6 +51,7 @@ export default GlobalStyle;
 export const Section = styled.div.attrs((props) => ({
   style: props.style ? { ...props.style } : {},
 }))`
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
