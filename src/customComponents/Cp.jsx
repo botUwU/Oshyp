@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function Cp({
+  style,
   children,
   isCentred = false,
   size = "md_regular",
@@ -23,13 +24,16 @@ export default function Cp({
       fontWeight={fontWeight}
       weight={weight}
       mediaQueries={mediaQueries}
+      style={style}
     >
       {children}
     </P>
   );
 }
 
-const P = styled.p`
+const P = styled.p.attrs((props) => ({
+  style: props.style ? { ...props.style } : {},
+}))`
   font-size: ${(props) => {
     if (props.fontSize === "sm") {
       return "12px";
