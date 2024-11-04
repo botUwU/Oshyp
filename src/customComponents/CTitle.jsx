@@ -24,7 +24,6 @@ export default function CTitle({
         isCentred={isCentred}
         color={color}
         mediaQueries={mediaQueries}
-        shrunk={shrunk}
       >
         {children}
       </Title1>
@@ -39,7 +38,6 @@ export default function CTitle({
         isCentred={isCentred}
         color={color}
         mediaQueries={mediaQueries}
-        shrunk={shrunk}
       >
         {children}
       </Title2>
@@ -48,13 +46,6 @@ export default function CTitle({
 }
 
 const Title1 = styled.h1`
-  ${(props) => {
-    if (props.shrunk) {
-      return css`
-        display: none;
-      `;
-    }
-  }}
   color: ${(props) => {
     if (props.color === "primary") {
       return colors.title.primary;
@@ -100,13 +91,6 @@ const Title1 = styled.h1`
 `;
 
 const Title2 = styled.h2`
-  ${(props) => {
-    if (props.shrunk) {
-      return css`
-        display: none;
-      `;
-    }
-  }}
   color: ${(props) => {
     if (props.color === "primary") {
       return colors.title.primary;
