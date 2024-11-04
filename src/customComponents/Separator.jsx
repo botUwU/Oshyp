@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 import { useInView } from "react-intersection-observer";
 
-export default function Separator({ shrunk }) {
-  return <Sep shrunk={shrunk}></Sep>;
+export default function Separator({ shrunk, color }) {
+  return <Sep color={color} shrunk={shrunk}></Sep>;
 }
 
 const Sep = styled.div`
@@ -24,5 +24,15 @@ const Sep = styled.div`
   transition: opacity 0.3s ease, max-height 0.3s ease;
   width: 100%;
   height: 2px;
-  background-color: ${colors.textColor.white};
+  ${(props) => {
+    if (props.color) {
+      return css`
+        background-color: ${props.color};
+      `;
+    } else {
+      return css`
+        background-color: ${colors.textColor.main};
+      `;
+    }
+  }};
 `;
