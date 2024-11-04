@@ -60,7 +60,6 @@ export default function Home() {
             height={"90%"}
             width={"35%"}
             rounded={false}
-            grayScale={true}
             shadow={"medium"}
             WrapperStyle={{ width: "40%" }}
           />

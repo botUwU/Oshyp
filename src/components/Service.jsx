@@ -83,7 +83,7 @@ export default function Service() {
                 </Cp>
                 <CImage
                   inView={ShiatuInView}
-                  src={"/image2.png"}
+                  src={"/image0.png"}
                   height={"350px"}
                   width={"300px"}
                   fit="cover"
@@ -92,7 +92,7 @@ export default function Service() {
                 />
                 <CImage
                   inView={ShiatuInView}
-                  src={"/image3.png"}
+                  src={"/image1.png"}
                   height={"350px"}
                   width={"300px"}
                   fit="cover"
@@ -138,7 +138,7 @@ export default function Service() {
                 </Cp>
                 <CImage
                   inView={osteoInView}
-                  src={"/image0.png"}
+                  src={"/image2.png"}
                   height={"350px"}
                   width={"300px"}
                   fit="cover"
@@ -147,7 +147,7 @@ export default function Service() {
                 />
                 <CImage
                   inView={osteoInView}
-                  src={"/image1.png"}
+                  src={"/image3.png"}
                   height={"350px"}
                   width={"300px"}
                   fit="cover"
