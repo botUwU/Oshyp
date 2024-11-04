@@ -62,7 +62,7 @@ const Header = () => {
             Miguel Duenas
           </CTitle>
         </HeaderTitle>
-        <Separator shrunk={isShrunk}></Separator>
+        <Separator color={colors.textColor.white} shrunk={isShrunk}></Separator>
         <nav>
           <UL>
             <HeaderItem
