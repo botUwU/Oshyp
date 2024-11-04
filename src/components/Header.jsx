@@ -1,5 +1,3 @@
-// src/components/Header.js
-// import React from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineMedicalServices } from "react-icons/md";
 import { FaRegSmile } from "react-icons/fa";
@@ -49,30 +47,18 @@ const Header = () => {
         marginTop: "-8px",
       }}
     >
-      <Headercontainer shrunk={isShrunk} ref={ref}>
-        <HeaderTitle>
-          {!isShrunk ? (
-            <CTitle
-              inView={isShrunk ? false : inView}
-              shrunk={isShrunk}
-              isCentred
-              variation="h1"
-              color="secondary"
-              tracking="0.1em"
-            >
-              OSHYP
-            </CTitle>
-          ) : (
-            <></>
-          )}
-
+      <Headercontainer ref={ref}>
+        <HeaderTitle shrunk={isShrunk}>
           <CTitle
-            inView={isShrunk ? false : inView}
-            shrunk={isShrunk}
-            color="white"
+            inView={inView}
+            isCentred
+            variation="h1"
+            color="secondary"
             tracking="0.1em"
-            variation="h2"
           >
+            OSHYP
+          </CTitle>
+          <CTitle inView={inView} color="white" tracking="0.1em" variation="h2">
             Miguel Duenas
           </CTitle>
         </HeaderTitle>
@@ -128,18 +114,6 @@ const Header = () => {
 export default Header;
 
 const Headercontainer = styled.header`
-  ${(props) => {
-    if (props.shrunk) {
-      return css`
-        filter: opacity(0.6);
-        transition: filter 0.2s ease-out;
-        &:hover {
-          filter: opacity(1);
-        }
-      `;
-    }
-  }}
-  transition: filter 0.2s ease-out;
   background-image: url("/berka.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -154,7 +128,6 @@ const Headercontainer = styled.header`
   box-shadow: 0px 8px 10.32px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
-  z-index: 10;
   @media (max-width: 900px) {
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -188,10 +161,33 @@ const UL = styled.ul`
   width: 100%;
   gap: 60px;
   @media (max-width: 900px) {
+    gap: 30px;
+  }
+  @media (max-width: 800px) {
     gap: 10px;
+  }
+  @media (max-width: 600px) {
+    gap: 5px;
   }
 `;
 
 const HeaderTitle = styled.div`
-  padding: 16px 0px;
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        opacity: 0;
+        max-height: 0;
+        padding: 0 0;
+      `;
+    } else {
+      return css`
+        opacity: 1;
+        max-height: 200px;
+        padding: 16px 0px;
+      `;
+    }
+  }}
+
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
 `;

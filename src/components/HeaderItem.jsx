@@ -24,7 +24,7 @@ export default function HeaderItem({
 }
 
 const Linkdiv = styled.div`
-  margin: 10px;
+  margin: 10px 0px;
   border-radius: 20%;
   position: relative;
   display: flex;
