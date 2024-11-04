@@ -155,6 +155,7 @@ const BCardSection = styled(Section)`
   justify-content: start;
   align-items: center;
   gap: 30px;
+  min-height: auto;
   @media (max-width: 1000px) {
     gap: 60px;
   }
@@ -178,7 +179,6 @@ const Card = styled.div`
   border-radius: 8px;
   box-shadow: 0px 12px 20.64px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-
   /* Overlay for darkening effect */
   &::before {
     content: "";

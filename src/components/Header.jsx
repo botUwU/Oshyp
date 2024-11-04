@@ -47,7 +47,7 @@ const Header = () => {
         marginTop: "-8px",
       }}
     >
-      <Headercontainer ref={ref}>
+      <Headercontainer shrunk={isShrunk} ref={ref}>
         <HeaderTitle shrunk={isShrunk}>
           <CTitle
             inView={inView}
@@ -114,6 +114,19 @@ const Header = () => {
 export default Header;
 
 const Headercontainer = styled.header`
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        filter: opacity(0.6) drop-shadow(0px 4px 4.65px rgba(0, 0, 0, 0.2));
+      `;
+    } else {
+      return css`
+        filter: opacity(1) drop-shadow(0px 4px 4.65px rgba(0, 0, 0, 0.2));
+      `;
+    }
+  }}
+  transition: filter 0.5s ease-out;
+
   background-image: url("/berka.png");
   background-repeat: no-repeat;
   background-size: cover;

@@ -17,7 +17,7 @@ export default function Testimonials() {
 
   return (
     <div style={{ backgroundColor: colors.backGroundColor.mainWhite }}>
-      <Section ref={testimonialsRef} type="vertical">
+      <TestomonialSection ref={testimonialsRef} type="vertical">
         <Container ref={ref}>
           <CTitle inView={inView} isCentred variation="h1" color="primary">
             Témoignages
@@ -57,7 +57,7 @@ export default function Testimonials() {
             </TestimonialCard>
           </TestimonialWrapper>
         </Container>
-      </Section>
+      </TestomonialSection>
     </div>
   );
 }
@@ -105,4 +105,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 60px;
+`;
+const TestomonialSection = styled(Section)`
+  min-height: auto;
 `;
