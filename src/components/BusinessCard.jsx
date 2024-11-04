@@ -29,7 +29,7 @@ function BusinessCard() {
             </CTitle>
             <ImageQr>
               <CImage
-                src={"/randomQR.png"}
+                src={"/QRCODE.png"}
                 width={"100%"}
                 inView={inView}
                 height={"100%"}
