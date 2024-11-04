@@ -11,11 +11,17 @@ const Sep = styled.div`
   ${(props) => {
     if (props.shrunk) {
       return css`
-        display: none;
+        opacity: 0;
+        max-height: 0px;
+      `;
+    } else {
+      return css`
+        opacity: 1;
+        max-height: 2px;
       `;
     }
   }}
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
   width: 100%;
   height: 2px;
   background-color: ${colors.textColor.white};
