@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function CTitle({
+  shrunk,
   children,
   isCentred = false,
   variation = "h1",
@@ -64,6 +65,7 @@ const Title1 = styled.h1`
   margin-top: ${(props) => props.mt || undefined};
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: display 0.6s ease-out;
   ${(props) => {
     if (props.inView) {
       return css`
@@ -108,6 +110,8 @@ const Title2 = styled.h2`
   margin-top: ${(props) => props.mt || undefined};
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: display 0.6s ease-out;
+
   ${(props) => {
     if (props.inView) {
       return css`

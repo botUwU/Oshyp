@@ -24,7 +24,7 @@ function BusinessCard() {
             <CTitle color="secondary" isCentred variation="h1" inView={inView}>
               OSHYP
             </CTitle>
-            <CTitle color="primary" isCentred variation="h2" inView={inView}>
+            <CTitle color="white" isCentred variation="h2" inView={inView}>
               Miguel DUENAS
             </CTitle>
             <ImageQr>
@@ -42,13 +42,18 @@ function BusinessCard() {
           </Title>
           <Methode>
             <MethodeItem>
-              <CTitle color="primary" isCentred variation="h2" inView={inView}>
+              <CTitle
+                color="secondary"
+                isCentred
+                variation="h2"
+                inView={inView}
+              >
                 Ostéothérapie
               </CTitle>
               <Cp
                 isCentred
                 weight="SemiBold"
-                color="main"
+                color="white"
                 size="lg_regular"
                 inView={inView}
                 tracking={"0.01em"}
@@ -57,13 +62,18 @@ function BusinessCard() {
               </Cp>
             </MethodeItem>
             <MethodeItem>
-              <CTitle color="primary" isCentred variation="h2" inView={inView}>
+              <CTitle
+                color="secondary"
+                isCentred
+                variation="h2"
+                inView={inView}
+              >
                 Shiatu
               </CTitle>
               <Cp
                 isCentred
                 weight="SemiBold"
-                color="main"
+                color="white"
                 size="lg_regular"
                 inView={inView}
                 tracking={"0.01em"}
@@ -76,7 +86,7 @@ function BusinessCard() {
             <Cp
               isCentred
               weight="ExtraBold"
-              color="main"
+              color="white"
               size="lg_regular"
               inView={inView}
               tracking={"0.01em"}
@@ -99,7 +109,7 @@ function BusinessCard() {
               <Cp
                 weight="SemiBold"
                 isCentred
-                color="main"
+                color="white"
                 size="lg_regular"
                 inView={inView}
                 tracking={"0.01em"}
@@ -120,7 +130,7 @@ function BusinessCard() {
               <Cp
                 weight="SemiBold"
                 isCentred
-                color="main"
+                color="white"
                 size="lg_regular"
                 inView={inView}
                 tracking={"0.01em"}

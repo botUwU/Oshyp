@@ -58,7 +58,7 @@ export const colors = {
   title: {
     primary: palette.textColor,
     secondary: palette.mainBlue,
-    white: palette.mainWhite,
+    white: palette.white,
   },
   shadows: {
     black: palette.black,

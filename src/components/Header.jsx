@@ -1,18 +1,30 @@
-// src/components/Header.js
-// import React from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineMedicalServices } from "react-icons/md";
 import { FaRegSmile } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
 import { useInView } from "react-intersection-observer";
 import Separator from "../customComponents/Separator";
 import CTitle from "../customComponents/CTitle";
+import { useEffect, useState } from "react";
 const Header = () => {
+  const [isShrunk, setIsShrunk] = useState(true);
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      setIsShrunk(true);
+    } else {
+      setIsShrunk(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const {
     homeRef,
     pricingRef,
@@ -36,7 +48,7 @@ const Header = () => {
       }}
     >
       <Headercontainer ref={ref}>
-        <HeaderTitle>
+        <HeaderTitle shrunk={isShrunk}>
           <CTitle
             inView={inView}
             isCentred
@@ -46,16 +58,11 @@ const Header = () => {
           >
             OSHYP
           </CTitle>
-          <CTitle
-            inView={inView}
-            color="primary"
-            tracking="0.1em"
-            variation="h2"
-          >
+          <CTitle inView={inView} color="white" tracking="0.1em" variation="h2">
             Miguel Duenas
           </CTitle>
         </HeaderTitle>
-        <Separator></Separator>
+        <Separator shrunk={isShrunk}></Separator>
         <nav>
           <UL>
             <HeaderItem
@@ -63,7 +70,7 @@ const Header = () => {
               name="Accueil"
               onScroll={() => scrollToSection(homeRef)}
             >
-              <IoHomeOutline size={"30px"} />
+              <IoHomeOutline size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -71,7 +78,7 @@ const Header = () => {
               name="Services"
               onScroll={() => scrollToSection(servicesRef)}
             >
-              <MdOutlineMedicalServices size={"30px"} />
+              <MdOutlineMedicalServices size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -79,7 +86,7 @@ const Header = () => {
               name="Testimonials"
               onScroll={() => scrollToSection(testimonialsRef)}
             >
-              <FaRegSmile size={"30px"} />
+              <FaRegSmile size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -87,7 +94,7 @@ const Header = () => {
               name="Tarifs"
               onScroll={() => scrollToSection(pricingRef)}
             >
-              <MdAttachMoney size={"30px"} />
+              <MdAttachMoney size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -95,7 +102,7 @@ const Header = () => {
               name="Contact"
               onScroll={() => scrollToSection(businessCardRef)}
             >
-              <IoIosContact size={"30px"} />
+              <IoIosContact size={"30px"} color="white" />
             </HeaderItem>
           </UL>
         </nav>
@@ -108,7 +115,6 @@ export default Header;
 
 const Headercontainer = styled.header`
   background-image: url("/berka.png");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -122,8 +128,6 @@ const Headercontainer = styled.header`
   box-shadow: 0px 8px 10.32px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
-  z-index: 10;
-
   @media (max-width: 900px) {
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -159,6 +163,31 @@ const UL = styled.ul`
   @media (max-width: 900px) {
     gap: 30px;
   }
+  @media (max-width: 800px) {
+    gap: 10px;
+  }
+  @media (max-width: 600px) {
+    gap: 5px;
+  }
 `;
 
-const HeaderTitle = styled.div``;
+const HeaderTitle = styled.div`
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        opacity: 0;
+        max-height: 0;
+        padding: 0 0;
+      `;
+    } else {
+      return css`
+        opacity: 1;
+        max-height: 200px;
+        padding: 16px 0px;
+      `;
+    }
+  }}
+
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
+`;
