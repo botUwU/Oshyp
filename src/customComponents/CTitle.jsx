@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function CTitle({
+  shrunk,
   children,
   isCentred = false,
   variation = "h1",
@@ -23,6 +24,7 @@ export default function CTitle({
         isCentred={isCentred}
         color={color}
         mediaQueries={mediaQueries}
+        shrunk={shrunk}
       >
         {children}
       </Title1>
@@ -37,6 +39,7 @@ export default function CTitle({
         isCentred={isCentred}
         color={color}
         mediaQueries={mediaQueries}
+        shrunk={shrunk}
       >
         {children}
       </Title2>
@@ -45,6 +48,13 @@ export default function CTitle({
 }
 
 const Title1 = styled.h1`
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        display: none;
+      `;
+    }
+  }}
   color: ${(props) => {
     if (props.color === "primary") {
       return colors.title.primary;
@@ -64,6 +74,7 @@ const Title1 = styled.h1`
   margin-top: ${(props) => props.mt || undefined};
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: display 0.6s ease-out;
   ${(props) => {
     if (props.inView) {
       return css`
@@ -89,6 +100,13 @@ const Title1 = styled.h1`
 `;
 
 const Title2 = styled.h2`
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        display: none;
+      `;
+    }
+  }}
   color: ${(props) => {
     if (props.color === "primary") {
       return colors.title.primary;
@@ -108,6 +126,8 @@ const Title2 = styled.h2`
   margin-top: ${(props) => props.mt || undefined};
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: display 0.6s ease-out;
+
   ${(props) => {
     if (props.inView) {
       return css`

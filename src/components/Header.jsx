@@ -5,14 +5,28 @@ import { MdOutlineMedicalServices } from "react-icons/md";
 import { FaRegSmile } from "react-icons/fa";
 import { MdAttachMoney } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useScroll } from "../helper/useScroll";
 import HeaderItem from "./HeaderItem";
 import { colors } from "../constants/colors";
 import { useInView } from "react-intersection-observer";
 import Separator from "../customComponents/Separator";
 import CTitle from "../customComponents/CTitle";
+import { useEffect, useState } from "react";
 const Header = () => {
+  const [isShrunk, setIsShrunk] = useState(true);
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      setIsShrunk(true);
+    } else {
+      setIsShrunk(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const {
     homeRef,
     pricingRef,
@@ -35,27 +49,34 @@ const Header = () => {
         marginTop: "-8px",
       }}
     >
-      <Headercontainer ref={ref}>
+      <Headercontainer shrunk={isShrunk} ref={ref}>
         <HeaderTitle>
+          {!isShrunk ? (
+            <CTitle
+              inView={isShrunk ? false : inView}
+              shrunk={isShrunk}
+              isCentred
+              variation="h1"
+              color="secondary"
+              tracking="0.1em"
+            >
+              OSHYP
+            </CTitle>
+          ) : (
+            <></>
+          )}
+
           <CTitle
-            inView={inView}
-            isCentred
-            variation="h1"
-            color="secondary"
-            tracking="0.1em"
-          >
-            OSHYP
-          </CTitle>
-          <CTitle
-            inView={inView}
-            color="primary"
+            inView={isShrunk ? false : inView}
+            shrunk={isShrunk}
+            color="white"
             tracking="0.1em"
             variation="h2"
           >
             Miguel Duenas
           </CTitle>
         </HeaderTitle>
-        <Separator></Separator>
+        <Separator shrunk={isShrunk}></Separator>
         <nav>
           <UL>
             <HeaderItem
@@ -63,7 +84,7 @@ const Header = () => {
               name="Accueil"
               onScroll={() => scrollToSection(homeRef)}
             >
-              <IoHomeOutline size={"30px"} />
+              <IoHomeOutline size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -71,7 +92,7 @@ const Header = () => {
               name="Services"
               onScroll={() => scrollToSection(servicesRef)}
             >
-              <MdOutlineMedicalServices size={"30px"} />
+              <MdOutlineMedicalServices size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -79,7 +100,7 @@ const Header = () => {
               name="Testimonials"
               onScroll={() => scrollToSection(testimonialsRef)}
             >
-              <FaRegSmile size={"30px"} />
+              <FaRegSmile size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -87,7 +108,7 @@ const Header = () => {
               name="Tarifs"
               onScroll={() => scrollToSection(pricingRef)}
             >
-              <MdAttachMoney size={"30px"} />
+              <MdAttachMoney size={"30px"} color="white" />
             </HeaderItem>
 
             <HeaderItem
@@ -95,7 +116,7 @@ const Header = () => {
               name="Contact"
               onScroll={() => scrollToSection(businessCardRef)}
             >
-              <IoIosContact size={"30px"} />
+              <IoIosContact size={"30px"} color="white" />
             </HeaderItem>
           </UL>
         </nav>
@@ -107,8 +128,19 @@ const Header = () => {
 export default Header;
 
 const Headercontainer = styled.header`
+  ${(props) => {
+    if (props.shrunk) {
+      return css`
+        filter: opacity(0.6);
+        transition: filter 0.2s ease-out;
+        &:hover {
+          filter: opacity(1);
+        }
+      `;
+    }
+  }}
+  transition: filter 0.2s ease-out;
   background-image: url("/berka.png");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -123,7 +155,6 @@ const Headercontainer = styled.header`
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   z-index: 10;
-
   @media (max-width: 900px) {
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -157,8 +188,10 @@ const UL = styled.ul`
   width: 100%;
   gap: 60px;
   @media (max-width: 900px) {
-    gap: 30px;
+    gap: 10px;
   }
 `;
 
-const HeaderTitle = styled.div``;
+const HeaderTitle = styled.div`
+  padding: 16px 0px;
+`;
