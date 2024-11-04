@@ -12,7 +12,7 @@ import Separator from "../customComponents/Separator";
 import CTitle from "../customComponents/CTitle";
 import { useEffect, useState } from "react";
 const Header = () => {
-  const [isShrunk, setIsShrunk] = useState(true);
+  const [isShrunk, setIsShrunk] = useState(false);
   const handleScroll = () => {
     if (window.scrollY > 80) {
       setIsShrunk(true);
