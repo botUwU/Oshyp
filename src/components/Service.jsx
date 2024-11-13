@@ -34,7 +34,7 @@ export default function Service() {
     },
   ];
   return (
-    <div>
+    <WrapperContainer>
       <Section mediaQueries={mediaQueries} ref={servicesRef}>
         <Wrapper>
           <Title ref={titleRef}>
@@ -171,9 +171,12 @@ export default function Service() {
           </Title>
         </Wrapper>
       </Section>
-    </div>
+    </WrapperContainer>
   );
 }
+const WrapperContainer = styled.div`
+  background-color: ${colors.backGroundColor.mainWhite};
+`;
 const Title = styled.div`
   display: flex;
   flex-direction: column;
