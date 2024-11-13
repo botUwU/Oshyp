@@ -10,7 +10,7 @@ import Cbutton from "../customComponents/Cbutton";
 import Cp from "../customComponents/Cp";
 import { useInView } from "react-intersection-observer";
 export default function Home() {
-  const { homeRef, scrollToSection, servicesRef } = useScroll();
+  const { homeRef, scrollToSection, whoAmIRef } = useScroll();
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -46,11 +46,11 @@ export default function Home() {
             <Cbutton
               variation="secondary"
               onClick={() => {
-                scrollToSection(servicesRef);
+                scrollToSection(whoAmIRef);
               }}
             >
               <Cp inView={inView} color="white">
-                En savoir plus sur nos services →{" "}
+                En savoir plus →{" "}
               </Cp>
             </Cbutton>
           </Description>

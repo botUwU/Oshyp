@@ -1,18 +1,27 @@
 import React from "react";
 import { Section } from "../GlobalStyle";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Shiatsu from "./Shiatsu";
 import Osteo from "./Osteo";
 import Separator from "../customComponents/Separator";
 
 export default function ServiceInfo() {
+  const mediaQueries = [
+    {
+      width: "900px",
+      styles: css`
+        padding: 30px 30px;
+        min-height: auto;
+      `,
+    },
+  ];
   return (
     <WrapperContainer>
-      <Section>
+      <Section mediaQueries={mediaQueries}>
         <Container>
-          <Shiatsu></Shiatsu>
-          <Separator></Separator>
           <Osteo></Osteo>
+          <Separator></Separator>
+          <Shiatsu></Shiatsu>
         </Container>
       </Section>
     </WrapperContainer>
