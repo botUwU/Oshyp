@@ -68,7 +68,7 @@ function BusinessCard() {
                 variation="h2"
                 inView={inView}
               >
-                Shiatu
+                Shiatsu
               </CTitle>
               <Cp
                 isCentred
