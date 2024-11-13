@@ -9,9 +9,15 @@ import Cp from "../customComponents/Cp";
 import CImage from "../customComponents/CImage";
 import Separator from "../customComponents/Separator";
 import { useInView } from "react-intersection-observer";
+import Cbutton from "../customComponents/Cbutton";
 
 export default function Service() {
-  const { servicesRef } = useScroll();
+  const {
+    servicesRef,
+    scrollToSection,
+    shiatsuRef: shiatsuREF,
+    osteoRef: osteoREF,
+  } = useScroll();
 
   const { ref: titleRef, inView: TitleInView } = useInView({
     triggerOnce: false,
@@ -57,6 +63,7 @@ export default function Service() {
               Nous offrons une gamme de traitements efficaces pour soulager la
               douleur et améliorer la santé générale.
             </CTitle>
+
             <Separator></Separator>
             <InfoContainer ref={shiatuRef}>
               <CTitle
@@ -111,7 +118,18 @@ export default function Service() {
                   migraines, les sciatiques, et plus encore.
                 </Cp>
               </GridContainer>
+              <Cbutton
+                variation="secondary"
+                onClick={() => {
+                  scrollToSection(osteoREF);
+                }}
+              >
+                <Cp inView={ShiatuInView} color="white">
+                  En savoir plus →{" "}
+                </Cp>
+              </Cbutton>
             </InfoContainer>
+
             <Separator></Separator>
             <InfoContainer ref={osteoRef}>
               <CTitle
@@ -167,6 +185,16 @@ export default function Service() {
                   du corps.
                 </Cp>
               </GridContainer>
+              <Cbutton
+                variation="secondary"
+                onClick={() => {
+                  scrollToSection(shiatsuREF);
+                }}
+              >
+                <Cp inView={osteoInView} color="white">
+                  En savoir plus →{" "}
+                </Cp>
+              </Cbutton>
             </InfoContainer>
           </Title>
         </Wrapper>
@@ -194,7 +222,17 @@ const GridContainer = styled.div`
   row-gap: 100px;
   line-height: 2.5;
 `;
-const InfoContainer = styled.div``;
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  > :last-child {
+    margin-top: 70px;
+    align-self: flex-end;
+  }
+`;
 
 const Wrapper = styled.div`
   padding: 60px 60px;

@@ -4,8 +4,10 @@ import { Section } from "../GlobalStyle";
 import CTitle from "../customComponents/CTitle";
 import { useInView } from "react-intersection-observer";
 import Cp from "../customComponents/Cp";
+import { useScroll } from "../helper/useScroll";
 
 export default function WhoAmI() {
+  const { whoAmIRef } = useScroll();
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -21,7 +23,7 @@ export default function WhoAmI() {
   ];
   return (
     <WrapperContainer ref={ref}>
-      <Section mediaQueries={mediaQueries}>
+      <Section ref={whoAmIRef} mediaQueries={mediaQueries}>
         <Container>
           <CTitle inView={inView} variation="h1" color="primary" isCentred>
             Qui suis-je ?
@@ -34,7 +36,13 @@ export default function WhoAmI() {
               Je suis Miguel Duenas.
             </CTitle>
           </Bonjour>
-          <Cp inView={inView} color="main" size="xxl_regular" tracking="0.1em">
+          <Cp
+            weight="Bold"
+            inView={inView}
+            color="main"
+            size="xxl_regular"
+            tracking="0.1em"
+          >
             Il y a déjà plus de 20 ans maintenant que je me suis formé au
             Shiatsu, c&apos;est une thérapie manuelle très efficace procurant un
             état profond relaxation, elle permet de maintenir un bon équilibre
