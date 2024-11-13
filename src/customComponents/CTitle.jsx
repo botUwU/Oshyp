@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { colors } from "../constants/colors";
 
 export default function CTitle({
-  shrunk,
   children,
   isCentred = false,
   variation = "h1",
