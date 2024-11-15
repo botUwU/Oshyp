@@ -84,6 +84,7 @@ function BusinessCard() {
           </Methode>
           <Info>
             <Cp
+              style={{ color: "blue", textDecoration: "underline" }}
               isCentred
               weight="ExtraBold"
               color="white"
@@ -91,8 +92,7 @@ function BusinessCard() {
               inView={inView}
               tracking={"0.01em"}
             >
-              Séances sur RDV tous les vendredis de 8h00 à 12h00 et de 14h00 à
-              17h00
+              https://oshyp-miguel-duenas.netlify.app
             </Cp>
           </Info>
           <Methode>
@@ -115,6 +115,27 @@ function BusinessCard() {
                 tracking={"0.01em"}
               >
                 0646870652
+              </Cp>
+            </MethodeItem>
+            <MethodeItem>
+              <Cp
+                weight="ExtraBold"
+                isCentred
+                color="secondary"
+                size="lg_regular"
+                inView={inView}
+              >
+                Adress :
+              </Cp>
+              <Cp
+                weight="SemiBold"
+                isCentred
+                color="white"
+                size="lg_regular"
+                inView={inView}
+                tracking={"0.01em"}
+              >
+                9, Rue de Figeac – 31450 BELBERAUD
               </Cp>
             </MethodeItem>
             <MethodeItem>
@@ -218,7 +239,7 @@ const Methode = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 30px;
 `;
 
@@ -233,7 +254,7 @@ const MethodeItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 10px;
 `;
 const ImageQr = styled.div`
