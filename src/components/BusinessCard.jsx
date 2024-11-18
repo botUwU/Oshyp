@@ -84,7 +84,7 @@ function BusinessCard() {
           </Methode>
           <Info>
             <Cp
-              style={{ color: "blue", textDecoration: "underline" }}
+              style={{ color: "rgb(66, 66, 192)", textDecoration: "underline" }}
               isCentred
               weight="ExtraBold"
               color="white"
