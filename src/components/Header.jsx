@@ -83,7 +83,7 @@ const Header = () => {
 
             <HeaderItem
               inView={inView}
-              name="Testimonials"
+              name="Témoignages"
               onScroll={() => scrollToSection(testimonialsRef)}
             >
               <FaRegSmile size={"30px"} color="white" />

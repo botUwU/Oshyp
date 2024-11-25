@@ -96,7 +96,7 @@ const Footer = () => {
                 mediaQueries={textMediaQueries}
                 inView={inView}
               >
-                oshypmd@gmail.com
+                0646870652{" "}
               </Cp>
             </BlockLine>
           </InfoItem>
@@ -138,8 +138,7 @@ const Footer = () => {
             size="lg_regular"
             color="primary"
           >
-            Séances sur RDV tous les vendredis de 8h00 à 12h00 et de 14h00 à
-            17h00
+            Séances sur RDV tous les vendredis
           </Cp>
         </LastLine>
       </FooterSection>
