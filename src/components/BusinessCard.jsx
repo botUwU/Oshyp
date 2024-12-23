@@ -92,7 +92,7 @@ function BusinessCard() {
               inView={inView}
               tracking={"0.01em"}
             >
-              https://oshyp-miguel-duenas.netlify.app
+              https://oshyp.fr/
             </Cp>
           </Info>
           <Methode>
@@ -125,7 +125,7 @@ function BusinessCard() {
                 size="lg_regular"
                 inView={inView}
               >
-                Adress :
+                Adresse :
               </Cp>
               <Cp
                 weight="SemiBold"

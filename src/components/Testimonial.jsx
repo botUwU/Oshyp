@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useState } from "react";
 import { useScroll } from "../helper/useScroll";
 import { Section } from "../GlobalStyle";
 import CTitle from "../customComponents/CTitle";
@@ -7,9 +7,16 @@ import styled from "styled-components";
 import { colors } from "../constants/colors";
 import Cp from "../customComponents/Cp";
 import { useInView } from "react-intersection-observer";
+import Cbutton from "../customComponents/Cbutton";
+import Modal from "./Modal";
+import TestimonialFeedBack from "./TestimonialFeedBack";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { useFeedBack } from "../hooks/useFeedBack";
 
 export default function Testimonials() {
+  const [showFeedbacks, setShowfeedbacks] = useState(false);
   const { testimonialsRef } = useScroll();
+  const { feedbacks, isLoading } = useFeedBack();
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -28,33 +35,58 @@ export default function Testimonials() {
           </CTitle>
 
           <TestimonialWrapper>
-            {/* Testimonial 1 */}
             <TestimonialCard>
               <Cp inView={inView} color="dark">
                 "L'Ostéothérapie m'a permis de retrouver ma mobilité en quelques
                 séances seulement. Miguel est très professionnel et
                 attentionné."
               </Cp>
-              <Author>– Jean Dupont</Author>
+              <Author>– Jean </Author>
             </TestimonialCard>
 
-            {/* Testimonial 2 */}
             <TestimonialCard>
               <Cp inView={inView} color="dark">
                 "Le Shiatsu m'a vraiment aidé à réduire mon stress et à mieux
                 gérer mon quotidien. Je recommande vivement !"
               </Cp>
-              <Author>– Marie Leclerc</Author>
+              <Author>– Marie </Author>
             </TestimonialCard>
 
-            {/* Testimonial 3 */}
             <TestimonialCard>
               <Cp inView={inView} color="dark">
                 "Un service exceptionnel ! Mes douleurs de dos ont quasiment
                 disparu après quelques séances d'Ostéothérapie."
               </Cp>
-              <Author>– Luc Martin</Author>
+              <Author>– Luc </Author>
             </TestimonialCard>
+
+            {showFeedbacks &&
+              feedbacks.slice(3).map((feedback) => (
+                <TestimonialCard key={feedback.id}>
+                  <Cp inView={inView} color="dark">
+                    {feedback.description}
+                  </Cp>
+                  <Author>– {feedback.name} </Author>
+                </TestimonialCard>
+              ))}
+            <Cbutton
+              variation="secondary"
+              onClick={() => setShowfeedbacks((state) => !state)}
+            >
+              {!showFeedbacks ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+            </Cbutton>
+            <Modal>
+              <Modal.Open opens="testimonials">
+                <Cbutton variation="secondary" inView={inView}>
+                  <Cp color="white" inView={inView}>
+                    Laisser un testimonial
+                  </Cp>
+                </Cbutton>
+              </Modal.Open>
+              <Modal.Window name="testimonials">
+                <TestimonialFeedBack />
+              </Modal.Window>
+            </Modal>
           </TestimonialWrapper>
         </Container>
       </TestomonialSection>
